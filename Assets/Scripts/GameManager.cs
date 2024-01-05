@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform _playerSpawnPoint;
-    [SerializeField] private GameObject _playerCamera;
+    public GameObject playerCamera;
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
         var cameraTarget = spawnPlayer.transform.Find("CameraTarget");
         spawnPlayer.GetComponent<PlayerController>().camera = Camera.main.transform;
-        _playerCamera.GetComponent<CinemachineVirtualCamera>().Follow = cameraTarget;
-        _playerCamera.GetComponent<PlayerCamera>().cameraTarget = cameraTarget;
+        playerCamera.GetComponent<CinemachineVirtualCamera>().Follow = cameraTarget;
+        playerCamera.GetComponent<PlayerCamera>().cameraTarget = cameraTarget;
     }
 }

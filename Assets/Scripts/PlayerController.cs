@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public Transform camera;
     public float turnSmoothTime = 0.1f;
+    public InputActions inputActions;
 
     private float turnSmoothVelocity;
     private Rigidbody _rb;
     private float _horizontalInput;
     private float _verticalInput;
+    private Vector2 _movementVector;
 
     private void Awake()
     {
@@ -23,15 +27,14 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        inputActions = new InputActions();
+        inputActions.Enable();
+
+        inputActions.Player.Movement.performed += OnMovement;
+        inputActions.Player.CameraRotateX.performed += OnCameraRotateX;
+        inputActions.Player.CameraRotateY.performed += OnCameraRotateY;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        _horizontalInput = Input.GetAxisRaw("Horizontal");
-        _verticalInput = Input.GetAxisRaw("Vertical");
-    }
     private void FixedUpdate()
     {
         _rb.AddForce(Vector3.down * 100f);
@@ -49,4 +52,23 @@ public class PlayerController : MonoBehaviour
             _rb.velocity = new Vector3(moveDirection.x, _rb.velocity.y, moveDirection.z);
         }
     }
+    #region Input
+    public void OnMovement(CallbackContext ctx)
+    {
+        _movementVector = ctx.ReadValue<Vector2>();
+
+        _horizontalInput = _movementVector.x;
+        _verticalInput = _movementVector.y;
+    }
+    public void OnCameraRotateX(CallbackContext ctx)
+    {
+        var getX = ctx.ReadValue<float>();
+        GameManager.Instance.playerCamera.GetComponent<PlayerCamera>().inputX = getX;
+    }
+    public void OnCameraRotateY(CallbackContext ctx)
+    {
+        var getY = ctx.ReadValue<float>();
+        GameManager.Instance.playerCamera.GetComponent<PlayerCamera>().inputY = getY;
+    }
+    #endregion
 }

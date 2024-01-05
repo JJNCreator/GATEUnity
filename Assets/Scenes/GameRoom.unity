@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpawnPoint: {fileID: 765945368}
-  _playerCamera: {fileID: 276913471}
+  playerCamera: {fileID: 276913471}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

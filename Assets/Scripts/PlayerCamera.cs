@@ -7,8 +7,8 @@ public class PlayerCamera : MonoBehaviour
     public Transform cameraTarget;
     private float xRotation;
     private float yRotation;
-    private float inputX;
-    private float inputY;
+    public float inputX;
+    public float inputY;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +22,6 @@ public class PlayerCamera : MonoBehaviour
     }
     private void LateUpdate()
     {
-        inputX = Input.GetAxisRaw("Mouse X");
-        inputY = Input.GetAxisRaw("Mouse Y");
-
         xRotation += inputY;
         yRotation += inputX;
 
