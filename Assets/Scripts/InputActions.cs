@@ -167,7 +167,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""LeftThumbstick"",
                     ""id"": ""badcdba1-709a-4aa9-b50d-c23fb9f95e36"",
                     ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
