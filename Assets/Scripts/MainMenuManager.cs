@@ -19,8 +19,13 @@ public class MainMenuManager : MonoBehaviour
         
     }
 
+    public void OnPlayGameClicked()
+    {
+        PlayGame().Forget();
+    }
+
     #region editor-bound
-    public async void PlayGame()
+    public async UniTask PlayGame()
     {
         var loadScene = SceneManager.LoadSceneAsync(1);
         while(!loadScene.isDone)
@@ -28,7 +33,7 @@ public class MainMenuManager : MonoBehaviour
             await UniTask.Yield();
         }
     }
-    public void QuitGame()
+    public void OnQuitGameCLicked()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
