@@ -22,6 +22,9 @@ public class PlayerCamera : MonoBehaviour
     }
     private void LateUpdate()
     {
+        if (PauseMenuManager.Instance.Paused)
+            return;
+
         xRotation += inputY;
         yRotation += inputX;
 
