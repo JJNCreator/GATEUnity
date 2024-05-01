@@ -8,6 +8,7 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public float jumpHeight;
     public Transform camera;
     public float turnSmoothTime = 0.1f;
     public InputActions inputActions;
@@ -16,7 +17,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rb;
     private float _horizontalInput;
     private float _verticalInput;
+    private bool _jumpPressed = false;
     private Vector2 _movementVector;
+    private bool _characterOnGround = true;
 
     private void Awake()
     {
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.CameraRotateX.performed += OnCameraRotateX;
         inputActions.Player.CameraRotateY.performed += OnCameraRotateY;
         inputActions.Player.Pause.performed += OnPaused;
+        inputActions.Player.Jumping.performed += OnJump;
     }
 
     private void OnDisable()
@@ -56,6 +60,15 @@ public class PlayerController : MonoBehaviour
 
             _rb.velocity = new Vector3(moveDirection.x, _rb.velocity.y, moveDirection.z);
         }
+        if(_jumpPressed && _characterOnGround)
+        {
+            _rb.AddForce(new Vector3(0, 5, 0) * jumpHeight, ForceMode.Impulse);
+            _characterOnGround = false;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        _characterOnGround = true;
     }
     #region Input
     public void OnMovement(CallbackContext ctx)
@@ -64,6 +77,10 @@ public class PlayerController : MonoBehaviour
 
         _horizontalInput = _movementVector.x;
         _verticalInput = _movementVector.y;
+    }
+    public void OnJump(CallbackContext ctx)
+    {
+        _jumpPressed = ctx.ReadValueAsButton();
     }
     public void OnCameraRotateX(CallbackContext ctx)
     {

@@ -50,8 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 25
+  jumpHeight: 25
   camera: {fileID: 0}
   turnSmoothTime: 0.1
+  _characterOnGround: 1
 --- !u!54 &2818223208576101002
 Rigidbody:
   m_ObjectHideFlags: 0
