@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerController : MonoBehaviour
@@ -33,6 +32,12 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Movement.performed += OnMovement;
         inputActions.Player.CameraRotateX.performed += OnCameraRotateX;
         inputActions.Player.CameraRotateY.performed += OnCameraRotateY;
+        inputActions.Player.Pause.performed += OnPaused;
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Disable();
     }
 
     private void FixedUpdate()
@@ -69,6 +74,10 @@ public class PlayerController : MonoBehaviour
     {
         var getY = ctx.ReadValue<float>();
         GameManager.Instance.playerCamera.GetComponent<PlayerCamera>().inputY = getY;
+    }
+    public void OnPaused(CallbackContext ctx)
+    {
+        PauseMenuManager.Instance.Paused = ctx.ReadValueAsButton();
     }
     #endregion
 }
