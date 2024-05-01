@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Jumping",
+                    "type": "Button",
+                    "id": "6320d5ac-6e50-4f5b-ae4a-058cf32ffce3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -271,6 +280,28 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a2f2cfc-0e16-4632-9a58-a88ea5ab1da9",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "M&K",
+                    "action": "Jumping",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "38eb6c3e-cb52-49aa-b334-16848f39e87c",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Jumping",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -62,6 +62,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jumping"",
+                    ""type"": ""Button"",
+                    ""id"": ""6320d5ac-6e50-4f5b-ae4a-058cf32ffce3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -295,6 +304,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a2f2cfc-0e16-4632-9a58-a88ea5ab1da9"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""M&K"",
+                    ""action"": ""Jumping"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38eb6c3e-cb52-49aa-b334-16848f39e87c"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Jumping"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -318,6 +349,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player_CameraRotateX = m_Player.FindAction("CameraRotateX", throwIfNotFound: true);
         m_Player_CameraRotateY = m_Player.FindAction("CameraRotateY", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_Jumping = m_Player.FindAction("Jumping", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -383,6 +415,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_CameraRotateX;
     private readonly InputAction m_Player_CameraRotateY;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_Jumping;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -391,6 +424,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @CameraRotateX => m_Wrapper.m_Player_CameraRotateX;
         public InputAction @CameraRotateY => m_Wrapper.m_Player_CameraRotateY;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @Jumping => m_Wrapper.m_Player_Jumping;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -412,6 +446,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Jumping.started += instance.OnJumping;
+            @Jumping.performed += instance.OnJumping;
+            @Jumping.canceled += instance.OnJumping;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -428,6 +465,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Jumping.started -= instance.OnJumping;
+            @Jumping.performed -= instance.OnJumping;
+            @Jumping.canceled -= instance.OnJumping;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -469,5 +509,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnCameraRotateX(InputAction.CallbackContext context);
         void OnCameraRotateY(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnJumping(InputAction.CallbackContext context);
     }
 }
