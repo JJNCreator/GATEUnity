@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  waypoints: []
+  isPatrolling: 1
 --- !u!195 &1177329943320010543
 NavMeshAgent:
   m_ObjectHideFlags: 0

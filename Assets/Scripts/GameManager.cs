@@ -1,6 +1,7 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform _playerSpawnPoint;
     [SerializeField] private Transform[] _enemySpawnPoints;
+    public WaypointGroup[] waypointGroups;
     public PlayerController player;
     public GameObject playerCamera;
     private static GameManager _instance;
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
 
         player = spawnPlayer.GetComponent<PlayerController>();
         var cameraTarget = spawnPlayer.transform.Find("CameraTarget");
-        spawnPlayer.GetComponent<PlayerController>().camera = Camera.main.transform;
+        spawnPlayer.GetComponent<PlayerController>().playerCamera = Camera.main.transform;
         playerCamera.GetComponent<CinemachineVirtualCamera>().Follow = cameraTarget;
         playerCamera.GetComponent<PlayerCamera>().cameraTarget = cameraTarget;
     }
@@ -53,6 +55,11 @@ public class GameManager : MonoBehaviour
                 spawnPoint.position,
                 spawnPoint.rotation);
             spawnEnemy.GetComponent<EnemyController>().target = player.transform;
+            spawnEnemy.GetComponent<EnemyController>().waypoints = GetWaypointGroup(i).waypointChildren;
         }
+    }
+    public WaypointGroup GetWaypointGroup(int groupID)
+    {
+        return waypointGroups.First(group => group.groupID == groupID);
     }
 }

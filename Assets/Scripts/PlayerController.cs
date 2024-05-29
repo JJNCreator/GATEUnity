@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpHeight;
-    public Transform camera;
+    public Transform playerCamera;
     public float turnSmoothTime = 0.1f;
     public InputActions inputActions;
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            var targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y;
+            var targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + playerCamera.eulerAngles.y;
             var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
