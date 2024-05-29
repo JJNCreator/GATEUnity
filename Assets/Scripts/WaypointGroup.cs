@@ -10,10 +10,10 @@ public class WaypointGroup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waypointChildren = transform.GetComponentsInChildren<Transform>();
+        /*waypointChildren = transform.GetComponentsInChildren<Transform>();
         var toList = waypointChildren.ToList();
         toList.RemoveAt(0);
-        waypointChildren = toList.ToArray();
+        waypointChildren = toList.ToArray();*/
     }
 
     // Update is called once per frame

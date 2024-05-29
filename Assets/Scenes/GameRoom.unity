@@ -216,7 +216,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groupID: 3
-  waypointChildren: []
+  waypointChildren:
+  - {fileID: 741803069}
+  - {fileID: 483902298}
+  - {fileID: 1628503105}
+  - {fileID: 1910190718}
 --- !u!1 &200291780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,7 +2167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groupID: 1
-  waypointChildren: []
+  waypointChildren:
+  - {fileID: 527891897}
+  - {fileID: 1417850965}
+  - {fileID: 1104012606}
+  - {fileID: 1252892802}
 --- !u!1 &1003715030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,7 +2268,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groupID: 0
-  waypointChildren: []
+  waypointChildren:
+  - {fileID: 1003715031}
+  - {fileID: 1888227172}
+  - {fileID: 622044478}
+  - {fileID: 200291781}
 --- !u!1 &1020071477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2589,7 +2601,7 @@ Transform:
   m_GameObject: {fileID: 1180539169}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 114.5, y: -25, z: -80.2}
+  m_LocalPosition: {x: 114.5, y: -26.66, z: -80.2}
   m_LocalScale: {x: 84.099625, y: 18.847544, z: 25.540724}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4052,7 +4064,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groupID: 2
-  waypointChildren: []
+  waypointChildren:
+  - {fileID: 1678098480}
+  - {fileID: 479118148}
+  - {fileID: 301490495}
+  - {fileID: 1602871214}
 --- !u!1 &1982674494
 GameObject:
   m_ObjectHideFlags: 0
