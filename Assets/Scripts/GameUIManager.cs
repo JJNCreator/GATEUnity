@@ -31,7 +31,7 @@ public class GameUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ToggleCursor(false);
     }
 
     // Update is called once per frame
@@ -43,15 +43,22 @@ public class GameUIManager : MonoBehaviour
     {
         HUDObject.SetActive(!paused);
         pauseMenuObject.SetActive(paused);
+        ToggleCursor(paused);
     }
     private async UniTask LoadMainMenu()
     {
         var asyncOperation = SceneManager.LoadSceneAsync("MainMenu");
         PauseMenuManager.Instance.Paused = false;
-        while(!asyncOperation.isDone)
+        ToggleCursor(true);
+        while (!asyncOperation.isDone)
         {
             await UniTask.Yield();
         }
+    }
+
+    public void ToggleCursor(bool on)
+    {
+        Cursor.visible = on;
     }
     #region editor-bound
     public void OnClickPauseState()
