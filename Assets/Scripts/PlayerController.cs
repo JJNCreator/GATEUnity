@@ -54,15 +54,15 @@ public class PlayerController : MonoBehaviour
             ref _smoothInputVelocity, _smoothInputSpeed);
         var direction = new Vector3(_currentInputVector.x, 0f, _currentInputVector.y);
 
-        if (direction.magnitude >= 0.01f)
+        if (direction.magnitude >= 0.1f)
         {
             var targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + playerCamera.eulerAngles.y;
             var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            var moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            var moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * moveSpeed;
 
-            _rb.velocity = new Vector3(moveDirection.x, _rb.velocity.y, moveDirection.z) * direction.magnitude * moveSpeed;
+            _rb.velocity = new Vector3(moveDirection.x, _rb.velocity.y, moveDirection.z) * direction.magnitude;
         }
         if(_jumpPressed && _characterOnGround)
         {
