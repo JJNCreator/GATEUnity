@@ -2323,8 +2323,8 @@ MonoBehaviour:
   target: {fileID: 0}
   inputX: 0
   inputY: 0
-  mouseSensitivityX: 3
-  mouseSensitivityY: 6
+  mouseSensitivityX: 0.9
+  mouseSensitivityY: 0.9
   distanceFromTarget: 12.76
   inverted: 1
 --- !u!1 &1104012605
