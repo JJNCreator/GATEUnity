@@ -43,8 +43,7 @@ public class GameManager : MonoBehaviour
         player = spawnPlayer.GetComponent<PlayerController>();
         var cameraTarget = spawnPlayer.transform.Find("CameraTarget");
         spawnPlayer.GetComponent<PlayerController>().playerCamera = Camera.main.transform;
-        playerCamera.GetComponent<CinemachineVirtualCamera>().Follow = cameraTarget;
-        playerCamera.GetComponent<PlayerCamera>().cameraTarget = cameraTarget;
+        playerCamera.GetComponent<PlayerCamera>().target = cameraTarget;
     }
     private void SpawnEnemies()
     {
