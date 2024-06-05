@@ -35,6 +35,12 @@ public class MainMenuManager : MonoBehaviour
             await UniTask.Yield();
         }
     }
+
+    public void OpenFeedbackForm()
+    {
+        Application.OpenURL("https://forms.gle/kDkkPbHjXCggZxiM6");
+    }
+
     public void OnQuitGameCLicked()
     {
 #if UNITY_EDITOR
