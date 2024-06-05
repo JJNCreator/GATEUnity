@@ -9,28 +9,10 @@
                     "name": "Movement",
                     "type": "PassThrough",
                     "id": "0af6e116-a0ae-408a-8dca-20f3b72cc504",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "CameraRotateX",
-                    "type": "PassThrough",
-                    "id": "3344cdfa-30b5-4f67-869b-e4302b4391d2",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "CameraRotateY",
-                    "type": "PassThrough",
-                    "id": "ee137574-2610-41f4-bc5b-9993b018b685",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 },
                 {
                     "name": "Pause",
@@ -48,6 +30,15 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "c5068610-3924-4741-9d8d-e7378e763aa4",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -163,101 +154,13 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "LeftThumbstick",
-                    "id": "badcdba1-709a-4aa9-b50d-c23fb9f95e36",
-                    "path": "2DVector(mode=2)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "da914b9b-85fb-4620-b5f4-8c96e8a6ed71",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "4b523b4a-e866-4149-8fd4-6e656d34f215",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "30eb6f05-b19b-4f1a-86d6-884858d3138d",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "9b730700-02f2-44d0-9b3b-2da332138f88",
-                    "path": "<Gamepad>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
-                    "id": "fa125a39-ba64-4413-8d1e-029de3802fb4",
-                    "path": "<Mouse>/delta/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraRotateX",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "667d92e7-66f0-4b9c-87b8-1b662e5d9457",
-                    "path": "<Gamepad>/rightStick/x",
+                    "id": "d907241d-b71a-4cde-95bc-2626c5cf8af5",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "CameraRotateX",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8857e34d-2272-47a5-bd78-9ba6cfcccf67",
-                    "path": "<Mouse>/delta/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraRotateY",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "27e3f041-1b5d-4efe-95f7-a6c74aeb926c",
-                    "path": "<Gamepad>/rightStick/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "CameraRotateY",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -302,6 +205,28 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Jumping",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7f8514a-5481-44f0-a807-cef61a0e552a",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "M&K",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e23e4516-d043-486b-b1db-b5e13f2f9f73",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

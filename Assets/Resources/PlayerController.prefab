@@ -49,11 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e1c16bfbc534243add9731af67ae58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 25
-  jumpHeight: 25
-  camera: {fileID: 0}
+  moveSpeed: 15
+  jumpHeight: 8
+  playerCamera: {fileID: 0}
   turnSmoothTime: 0.1
-  _characterOnGround: 1
 --- !u!54 &2818223208576101002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -63,7 +62,7 @@ Rigidbody:
   m_GameObject: {fileID: 1579131028825316902}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 10
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -295,7 +294,7 @@ Transform:
   m_GameObject: {fileID: 5537781708062473008}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.69, z: 0}
+  m_LocalPosition: {x: 0, y: 2.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
