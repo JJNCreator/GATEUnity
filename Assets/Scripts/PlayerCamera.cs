@@ -25,9 +25,8 @@ public class PlayerCamera : MonoBehaviour
     }
     private void LateUpdate()
     {
-        var lookVector = new Vector2(inputX, inputY);
-        float mouseX = lookVector.x * mouseSensitivityX;
-        float mouseY = lookVector.y * mouseSensitivityY;
+        float mouseX = UserInput.Instance.LookInput.x * mouseSensitivityX;
+        float mouseY = UserInput.Instance.LookInput.y * mouseSensitivityY;
         rotationY += mouseX;
         rotationX += (inverted) ? mouseY : mouseY * -1f;
         rotationX = Mathf.Clamp(rotationX, -40f, 40f);
