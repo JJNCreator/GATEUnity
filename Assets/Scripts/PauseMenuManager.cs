@@ -28,6 +28,22 @@ public class PauseMenuManager : MonoBehaviour
             OnPauseChanged(_paused);
         }
     }
+
+    void Update()
+    {
+        if(UserInput.Instance.PausedPressed)
+        {
+            if(!Paused)
+            {
+                Paused = true;
+            }
+            else
+            {
+                Paused = false;
+            }
+        }
+    }
+
     private void OnPauseChanged(bool paused)
     {
         onGamePaused?.Invoke(paused);
