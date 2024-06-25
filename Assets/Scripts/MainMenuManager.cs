@@ -25,6 +25,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject _graphicsSettingsObject;
     [SerializeField] private GameObject _audioSettingsObject;
     [SerializeField] private GameObject _controlsSettingsObject;
+    [SerializeField] private GameObject _mouseKeyboardBindings;
+    [SerializeField] private GameObject _controllerBindings;
     public MenuState CurrentMenuState
     {
         get
@@ -176,7 +178,11 @@ public class MainMenuManager : MonoBehaviour
     {
         GameSettings.YInverted = b;
     }
-    //TODO: Add key bindings
+    public void ChangeBindingType(bool controller)
+    {
+        _mouseKeyboardBindings.SetActive(!controller);
+        _controllerBindings.SetActive(controller);
+    }
 
     #endregion
 }
