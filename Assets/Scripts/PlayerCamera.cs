@@ -20,6 +20,15 @@ public class PlayerCamera : MonoBehaviour
     private float SmoothTime = 0.2f;
     private Transform _transformCache;
 
+    private void OnEnable()
+    {
+        PauseMenuManager.onGamePaused += OnPausedGame;
+    }
+    private void OnDisable()
+    {
+        PauseMenuManager.onGamePaused -= OnPausedGame;
+    }
+
     private void Awake()
     {
         _transformCache = transform;
@@ -41,6 +50,13 @@ public class PlayerCamera : MonoBehaviour
         if (target != null)
         {
             _transformCache.position = target.position - _transformCache.forward * distanceFromTarget;
+        }
+    }
+    private void OnPausedGame(bool b)
+    {
+        if (b == false)
+        {
+            SetSettings();
         }
     }
     private void SetSettings()
