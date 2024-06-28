@@ -10,7 +10,8 @@ public class PlayerCamera : MonoBehaviour
     public float mouseSensitivityX = 3f;
     public float mouseSensitivityY = 3f;
     public float distanceFromTarget = 3f;
-    public bool inverted = false;
+    public bool xInverted;
+    public bool yInverted;
 
     private float rotationY;
     private float rotationX;
@@ -23,12 +24,16 @@ public class PlayerCamera : MonoBehaviour
     {
         _transformCache = transform;
     }
+    private void Start()
+    {
+        SetSettings();
+    }
     private void LateUpdate()
     {
-        float mouseX = UserInput.Instance.LookInput.x * mouseSensitivityX;
-        float mouseY = UserInput.Instance.LookInput.y * mouseSensitivityY;
+        float mouseX = UserInput.Instance.LookInput.x * mouseSensitivityX * ((!xInverted) ? -1f : 1f);
+        float mouseY = UserInput.Instance.LookInput.y * mouseSensitivityY * ((!yInverted) ? -1f : 1f);
         rotationY += mouseX;
-        rotationX += (inverted) ? mouseY : mouseY * -1f;
+        rotationX += mouseY;
         rotationX = Mathf.Clamp(rotationX, -40f, 40f);
         var nextRotation = new Vector2(rotationX, rotationY);
         CurrentRotation = Vector3.SmoothDamp(CurrentRotation, nextRotation, ref SmoothVelocity, SmoothTime);
@@ -37,5 +42,12 @@ public class PlayerCamera : MonoBehaviour
         {
             _transformCache.position = target.position - _transformCache.forward * distanceFromTarget;
         }
+    }
+    private void SetSettings()
+    {
+        mouseSensitivityX = GameSettings.XSensitivity;
+        mouseSensitivityY = GameSettings.YSensitivity;
+        xInverted = GameSettings.XInverted;
+        yInverted = GameSettings.YInverted;
     }
 }
