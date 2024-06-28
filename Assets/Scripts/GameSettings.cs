@@ -8,7 +8,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.vSync;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.vSync : false;
         }
         set
         {
@@ -19,7 +19,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.resolutionChoice;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.resolutionChoice : 0;
         }
         set
         {
@@ -30,7 +30,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.monitorChoice;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.monitorChoice : 0;
         }
         set
         {
@@ -41,7 +41,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.qualityLevel;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.qualityLevel : 0;
         }
         set
         {
@@ -52,7 +52,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.masterVolume;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.masterVolume : 1f;
         }
         set
         {
@@ -63,7 +63,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.musicVolume;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.musicVolume : 1f;
         }
         set
         {
@@ -74,7 +74,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.sfxVolume;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.sfxVolume : 1f;
         }
         set
         {
@@ -85,7 +85,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.xSensitivity;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.xSensitivity : 5f;
         }
         set
         {
@@ -96,7 +96,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.ySensitivity;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.ySensitivity : 5f;
         }
         set
         {
@@ -107,7 +107,7 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.xInverted;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.xInverted : false;
         }
         set
         {
@@ -118,12 +118,11 @@ public static class GameSettings
     {
         get
         {
-            return SaveFileManager.saveFile.yInverted;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.yInverted : false;
         }
         set
         {
             SaveFileManager.saveFile.yInverted = value;
         }
     }
-    //TODO: Add key bindings
 }

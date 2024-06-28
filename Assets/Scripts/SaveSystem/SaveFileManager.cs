@@ -8,6 +8,7 @@ public static class SaveFileManager
 {
     public static SaveFile saveFile = new();
     private static string filePath;
+    private static bool alreadyLoadedFileForSession;
 
     public static void Save()
     {
@@ -25,12 +26,14 @@ public static class SaveFileManager
         saveFileChanges.ySensitivity = saveFile.ySensitivity;
         saveFileChanges.xInverted = saveFile.xInverted;
         saveFileChanges.yInverted = saveFile.yInverted;
-        //TODO: Add key kindings
         string writeToFile = JsonUtility.ToJson(saveFileChanges, true);
         File.WriteAllText(filePath, writeToFile);
     }
     public static void Load()
     {
+        if (alreadyLoadedFileForSession)
+            return;
+
         filePath = string.Format("{0}/ProjectVenariUnity.json", Application.persistentDataPath);
 
         if (File.Exists(filePath))
@@ -46,6 +49,23 @@ public static class SaveFileManager
                 Debug.LogWarning("SaveFileManager:Load() - Save file appears to be malformed.");
             }
         }
+        else
+        {
+            saveFile.vSync = false;
+            saveFile.resolutionChoice = 0;
+            saveFile.monitorChoice = 0;
+            saveFile.qualityLevel = 0;
+            saveFile.masterVolume = 1f;
+            saveFile.musicVolume = 1f;
+            saveFile.sfxVolume = 1f;
+            saveFile.xSensitivity = 30f;
+            saveFile.ySensitivity = 30f;
+            saveFile.xInverted = false;
+            saveFile.yInverted = false;
+
+            Save();
+        }
+        alreadyLoadedFileForSession = true;
     }
 }
 
@@ -63,5 +83,4 @@ public class SaveFile
     public float ySensitivity;
     public bool xInverted;
     public bool yInverted;
-    //TODO: add key bindings
 }

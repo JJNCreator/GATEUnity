@@ -22,11 +22,11 @@ public class GameUIManager : MonoBehaviour
     
     void OnEnable()
     {
-        PauseMenuManager.onGamePaused += OnGamePaused;
+        //PauseMenuManager.onGamePaused += OnGamePaused;
     }
     void OnDisable()
     {
-        PauseMenuManager.onGamePaused -= OnGamePaused;
+        //PauseMenuManager.onGamePaused -= OnGamePaused;
     }
     // Start is called before the first frame update
     void Start()
