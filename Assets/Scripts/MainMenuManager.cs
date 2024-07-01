@@ -33,7 +33,6 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject _controllerBindings;
 
     [SerializeField] private TMP_Dropdown _resolutionDropdown;
-    [SerializeField] private TMP_Dropdown _monitorDropdown;
     [SerializeField] private TMP_Dropdown _qualityLevelDropdown;
     public MenuState CurrentMenuState
     {
@@ -55,7 +54,6 @@ public class MainMenuManager : MonoBehaviour
         SaveFileManager.Load();
 
         SetResolutionOptions();
-        SetMonitorOptions();
         SetQualityOptions();
 
         _masterGroup.audioMixer.SetFloat("MasterVolume", GameSettings.MasterVolume);
@@ -113,19 +111,6 @@ public class MainMenuManager : MonoBehaviour
             optionsToAdd.Add(option);
         }
         _resolutionDropdown.AddOptions(optionsToAdd);
-    }
-    private void SetMonitorOptions()
-    {
-        _monitorDropdown.ClearOptions();
-        var getMonitorResolutions = Display.displays;
-        var optionsToAdd = new List<TMPro.TMP_Dropdown.OptionData>();
-        foreach (var monitor in getMonitorResolutions)
-        {
-            var option = new TMPro.TMP_Dropdown.OptionData();
-            option.text = monitor.ToString();
-            optionsToAdd.Add(option);
-        }
-        _monitorDropdown.AddOptions(optionsToAdd);
     }
     private void SetQualityOptions()
     {
@@ -205,12 +190,14 @@ public class MainMenuManager : MonoBehaviour
             " x ",
             " @ "
         }, System.StringSplitOptions.None);
-        Screen.SetResolution(int.Parse(selectedOptionSplit[0]), int.Parse(selectedOptionSplit[1]), false);
+        Screen.SetResolution(int.Parse(selectedOptionSplit[0]), int.Parse(selectedOptionSplit[1]), GameSettings.Fullscreen);
     }
-    public void SetMonitorChoice(int i)
+    public void SetFullscreen(bool b)
     {
-        GameSettings.MonitorChoice = i;
-        Display.displays[GameSettings.MonitorChoice].Activate();
+        GameSettings.Fullscreen = b;
+        Screen.SetResolution(Screen.currentResolution.width, 
+            Screen.currentResolution.height, 
+            GameSettings.Fullscreen);
     }
     public void SetQualityLevel(int i)
     {

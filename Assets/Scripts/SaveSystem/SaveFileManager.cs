@@ -17,7 +17,7 @@ public static class SaveFileManager
         var saveFileChanges = new SaveFile();
         saveFileChanges.vSync = saveFile.vSync;
         saveFileChanges.resolutionChoice = saveFile.resolutionChoice;
-        saveFileChanges.monitorChoice = saveFile.monitorChoice;
+        saveFileChanges.fullscreen = saveFile.fullscreen;
         saveFileChanges.qualityLevel = saveFile.qualityLevel;
         saveFileChanges.masterVolume = saveFile.masterVolume;
         saveFileChanges.musicVolume = saveFile.musicVolume;
@@ -53,7 +53,7 @@ public static class SaveFileManager
         {
             saveFile.vSync = false;
             saveFile.resolutionChoice = 0;
-            saveFile.monitorChoice = 0;
+            saveFile.fullscreen = false;
             saveFile.qualityLevel = 0;
             saveFile.masterVolume = 1f;
             saveFile.musicVolume = 1f;
@@ -74,7 +74,7 @@ public class SaveFile
 {
     public bool vSync;
     public int resolutionChoice;
-    public int monitorChoice;
+    public bool fullscreen;
     public int qualityLevel;
     public float masterVolume;
     public float musicVolume;
