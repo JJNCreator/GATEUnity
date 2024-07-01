@@ -46,7 +46,7 @@ public class BuildScript
 
         var report = BuildPipeline.BuildPlayer(options);
     }
-    [MenuItem("Build/Windows/Release")]
+    [MenuItem("Build/macOS/Release")]
     public static void BuildMacOSRelease()
     {
         var options = new BuildPlayerOptions();
