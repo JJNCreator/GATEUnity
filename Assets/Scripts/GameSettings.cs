@@ -26,15 +26,15 @@ public static class GameSettings
             SaveFileManager.saveFile.resolutionChoice = value;
         }
     }
-    public static int MonitorChoice
+    public static bool Fullscreen
     {
         get
         {
-            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.monitorChoice : 0;
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.fullscreen : false;
         }
         set
         {
-            SaveFileManager.saveFile.monitorChoice = value;
+            SaveFileManager.saveFile.fullscreen = value;
         }
     }
     public static int QualityLevelChoice

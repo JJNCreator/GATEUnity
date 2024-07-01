@@ -9,7 +9,7 @@
                     "name": "Movement",
                     "type": "PassThrough",
                     "id": "0af6e116-a0ae-408a-8dca-20f3b72cc504",
-                    "expectedControlType": "Stick",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true

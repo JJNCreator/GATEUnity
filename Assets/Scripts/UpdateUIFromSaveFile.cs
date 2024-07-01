@@ -11,7 +11,7 @@ public class UpdateUIFromSaveFile : MonoBehaviour
     {
         VSync = 0,
         Resolution = 1,
-        Monitor = 2,
+        Fullscreen = 2,
         QualityLevel = 3,
         MasterVolume = 4,
         MusicVolume = 5,
@@ -38,8 +38,8 @@ public class UpdateUIFromSaveFile : MonoBehaviour
             case SettingType.Resolution:
                 GetComponent<TMP_Dropdown>().value = GameSettings.ResolutionChoice;
                 break;
-            case SettingType.Monitor:
-                GetComponent<TMP_Dropdown>().value = GameSettings.MonitorChoice;
+            case SettingType.Fullscreen:
+                GetComponent<Toggle>().isOn = GameSettings.Fullscreen;
                 break;
             case SettingType.QualityLevel:
                 GetComponent<TMP_Dropdown>().value = GameSettings.QualityLevelChoice;

@@ -17,7 +17,7 @@ public static class SaveFileManager
         var saveFileChanges = new SaveFile();
         saveFileChanges.vSync = saveFile.vSync;
         saveFileChanges.resolutionChoice = saveFile.resolutionChoice;
-        saveFileChanges.monitorChoice = saveFile.monitorChoice;
+        saveFileChanges.fullscreen = saveFile.fullscreen;
         saveFileChanges.qualityLevel = saveFile.qualityLevel;
         saveFileChanges.masterVolume = saveFile.masterVolume;
         saveFileChanges.musicVolume = saveFile.musicVolume;
@@ -26,6 +26,7 @@ public static class SaveFileManager
         saveFileChanges.ySensitivity = saveFile.ySensitivity;
         saveFileChanges.xInverted = saveFile.xInverted;
         saveFileChanges.yInverted = saveFile.yInverted;
+        saveFileChanges.keyBindings = saveFile.keyBindings;
         string writeToFile = JsonUtility.ToJson(saveFileChanges, true);
         File.WriteAllText(filePath, writeToFile);
     }
@@ -53,7 +54,7 @@ public static class SaveFileManager
         {
             saveFile.vSync = false;
             saveFile.resolutionChoice = 0;
-            saveFile.monitorChoice = 0;
+            saveFile.fullscreen = false;
             saveFile.qualityLevel = 0;
             saveFile.masterVolume = 1f;
             saveFile.musicVolume = 1f;
@@ -62,6 +63,7 @@ public static class SaveFileManager
             saveFile.ySensitivity = 30f;
             saveFile.xInverted = false;
             saveFile.yInverted = false;
+            saveFile.keyBindings = string.Empty;
 
             Save();
         }
@@ -74,7 +76,7 @@ public class SaveFile
 {
     public bool vSync;
     public int resolutionChoice;
-    public int monitorChoice;
+    public bool fullscreen;
     public int qualityLevel;
     public float masterVolume;
     public float musicVolume;
@@ -83,4 +85,5 @@ public class SaveFile
     public float ySensitivity;
     public bool xInverted;
     public bool yInverted;
+    public string keyBindings;
 }
