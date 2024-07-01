@@ -194,6 +194,7 @@ public class MainMenuManager : MonoBehaviour
     public void SetVSync(bool b)
     {
         GameSettings.VSync = b;
+        QualitySettings.vSyncCount = (GameSettings.VSync) ? 1 : 0;
     }
     public void SetResolutionChoice(int i)
     {
