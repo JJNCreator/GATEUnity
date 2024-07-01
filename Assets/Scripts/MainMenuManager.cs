@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
@@ -53,7 +54,7 @@ public class MainMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _versionText.text = Application.version;
+        LoadVersion();
         SaveFileManager.Load();
 
         SetResolutionOptions();
@@ -68,6 +69,12 @@ public class MainMenuManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void LoadVersion()
+    {
+        var loadFile = Resources.Load<TextAsset>("VersionInfo");
+        _versionText.text = loadFile.text;
     }
 
     private void OnMenuStateChanged(MenuState newState)
