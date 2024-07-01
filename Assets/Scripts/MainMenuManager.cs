@@ -6,6 +6,8 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -31,6 +33,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject _controlsSettingsObject;
     [SerializeField] private GameObject _mouseKeyboardBindings;
     [SerializeField] private GameObject _controllerBindings;
+    [SerializeField] private InputActionAsset _inputActions;
 
     [SerializeField] private TMP_Dropdown _resolutionDropdown;
     [SerializeField] private TMP_Dropdown _qualityLevelDropdown;
@@ -97,6 +100,22 @@ public class MainMenuManager : MonoBehaviour
         _graphicsSettingsObject.SetActive(graphics);
         _audioSettingsObject.SetActive(audio);
         _controlsSettingsObject.SetActive(controls);
+        if(controls)
+        {
+            LoadKeyBindings();
+        }
+    }
+
+    private void SaveKeyBindings()
+    {
+        var rebinds = _inputActions.SaveBindingOverridesAsJson();
+        SaveFileManager.saveFile.keyBindings = rebinds;
+    }
+    private void LoadKeyBindings()
+    {
+        var rebinds = SaveFileManager.saveFile.keyBindings;
+        if (!string.IsNullOrEmpty(rebinds))
+            _inputActions.LoadBindingOverridesFromJson(rebinds);
     }
 
     private void SetResolutionOptions()
@@ -142,6 +161,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnMainMenuClicked()
     {
+        SaveKeyBindings();
         SaveFileManager.Save();
         CurrentMenuState = MenuState.Main;
     }

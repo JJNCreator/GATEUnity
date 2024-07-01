@@ -26,6 +26,7 @@ public static class SaveFileManager
         saveFileChanges.ySensitivity = saveFile.ySensitivity;
         saveFileChanges.xInverted = saveFile.xInverted;
         saveFileChanges.yInverted = saveFile.yInverted;
+        saveFileChanges.keyBindings = saveFile.keyBindings;
         string writeToFile = JsonUtility.ToJson(saveFileChanges, true);
         File.WriteAllText(filePath, writeToFile);
     }
@@ -62,6 +63,7 @@ public static class SaveFileManager
             saveFile.ySensitivity = 30f;
             saveFile.xInverted = false;
             saveFile.yInverted = false;
+            saveFile.keyBindings = string.Empty;
 
             Save();
         }
@@ -83,4 +85,5 @@ public class SaveFile
     public float ySensitivity;
     public bool xInverted;
     public bool yInverted;
+    public string keyBindings;
 }

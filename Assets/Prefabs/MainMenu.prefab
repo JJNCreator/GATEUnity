@@ -750,7 +750,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8508201508840753764}
   - component: {fileID: 2597933044482405235}
-  - component: {fileID: 7163963844678013471}
   m_Layer: 5
   m_Name: MouseKeyboardBindings
   m_TagString: Untagged
@@ -806,19 +805,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &7163963844678013471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275068544740613712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b6c2da2db9374dada6761b5e35121c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actions: {fileID: -944628639613478452, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
 --- !u!1 &283937098886852397
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,6 +6177,7 @@ MonoBehaviour:
   _controlsSettingsObject: {fileID: 2509854860727744700}
   _mouseKeyboardBindings: {fileID: 275068544740613712}
   _controllerBindings: {fileID: 8728304449022426848}
+  _inputActions: {fileID: -944628639613478452, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
   _resolutionDropdown: {fileID: 2566518109143650090}
   _qualityLevelDropdown: {fileID: 4973272846666751161}
   _versionText: {fileID: 7719415048491224820}
@@ -12281,7 +12268,6 @@ GameObject:
   - component: {fileID: 5304757846787348068}
   - component: {fileID: 1566589111860420182}
   - component: {fileID: 4769270517236462329}
-  - component: {fileID: 2723318007762747751}
   m_Layer: 5
   m_Name: ControllerBindings
   m_TagString: Untagged
@@ -12389,19 +12375,6 @@ MonoBehaviour:
     rightStick: {fileID: 21300000, guid: 04f2711270cd5b64099d2ca2f99529de, type: 3}
     leftStickPress: {fileID: 21300000, guid: 7e177675a5fc16248b6e164ef7a7f2a6, type: 3}
     rightStickPress: {fileID: 21300000, guid: 04f2711270cd5b64099d2ca2f99529de, type: 3}
---- !u!114 &2723318007762747751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8728304449022426848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b6c2da2db9374dada6761b5e35121c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actions: {fileID: -944628639613478452, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
 --- !u!1 &8876507430588324578
 GameObject:
   m_ObjectHideFlags: 0
@@ -17250,6 +17223,18 @@ PrefabInstance:
     - target: {fileID: 6680292650503350826, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_OverrideActionLabel
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680292650503350826, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
+      propertyPath: m_UpdateBindingUIEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680292650503350826, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
+      propertyPath: m_UpdateBindingUIEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680292650503350826, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
+      propertyPath: m_UpdateBindingUIEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650847612332, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_SizeDelta.x

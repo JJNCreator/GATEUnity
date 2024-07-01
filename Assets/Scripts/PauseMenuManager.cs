@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class PauseMenuManager : MonoBehaviour
 
     [SerializeField] private TMP_Dropdown _resolutionDropdown;
     [SerializeField] private TMP_Dropdown _qualityLevelDropdown;
+    [SerializeField] private InputActionAsset _inputActions;
     public PauseMenuState CurrentMenuState
     {
         get
@@ -140,6 +142,17 @@ public class PauseMenuManager : MonoBehaviour
                 break;
         }
     }
+    private void SaveKeyBindings()
+    {
+        var rebinds = _inputActions.SaveBindingOverridesAsJson();
+        SaveFileManager.saveFile.keyBindings = rebinds;
+    }
+    private void LoadKeyBindings()
+    {
+        var rebinds = SaveFileManager.saveFile.keyBindings;
+        if (!string.IsNullOrEmpty(rebinds))
+            _inputActions.LoadBindingOverridesFromJson(rebinds);
+    }
     private void ToggleMenus(bool main, bool graphics, bool audio, bool controls)
     {
         _mainButtonsObject.SetActive(main);
@@ -147,6 +160,10 @@ public class PauseMenuManager : MonoBehaviour
         _graphicsSettingsObject.SetActive(graphics);
         _audioSettingsObject.SetActive(audio);
         _controlsSettingsObject.SetActive(controls);
+        if(controls)
+        {
+            LoadKeyBindings();
+        }
     }
     private void SetResolutionOptions()
     {
@@ -193,6 +210,7 @@ public class PauseMenuManager : MonoBehaviour
     #region editor-bound
     public void OnMainMenuClicked()
     {
+        SaveKeyBindings();
         SaveFileManager.Save();
         CurrentMenuState = PauseMenuState.Main;
     }
