@@ -1,0 +1,354 @@
+fileFormatVersion: 2
+guid: d33082d250d5bce49ab80d46b83be932
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Button
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1331
+        width: 729
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 55, y: 40, z: 41, w: 42}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62588f589c95e44bb42b309803b0ebc
+      internalID: -1277087235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToggleCheck
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1380
+        width: 201
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7b5acf762d24b438295362c6029721
+      internalID: -1315963352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToggleBackground
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 1354
+        width: 252
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278ddacb4606a1f4ba4a7842ddf2c01e
+      internalID: 1127461124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SliderHandle
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 1413
+        width: 126
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3ee566c94101044b292769fbd6ba87
+      internalID: 1211445120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panel
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 882
+        width: 727
+        height: 709
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 34, y: 42, z: 35, w: 39}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d332d148a75f894eb83fad45eda3cf1
+      internalID: -1667567669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropdownBackground
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1027
+        width: 748
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 30, y: 31, z: 32, w: 33}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45d3a99a96ce8f4ea00e93762336284
+      internalID: -1122651144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DropdownItemBackground
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 797
+        width: 747
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 32, y: 30, z: 29, w: 32}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a468481ffc97f46bc94b780d14e958
+      internalID: 1437855533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScrollbarBackground
+      rect:
+        serializedVersion: 2
+        x: 2469
+        y: 482
+        width: 136
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 20, y: 31, z: 26, w: 29}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1279a2246e5d74349835a24be71f2400
+      internalID: -514142224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScrollbarHandle
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 486
+        width: 135
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 21, y: 21, z: 20, w: 22}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdb84ddeedf59047a57a9f5b8a85aab
+      internalID: -1944628274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SliderFillBackground
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 565
+        width: 1350
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 29, y: 0, z: 29, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbe6fbe855ede741a5c03a00c891d76
+      internalID: -664316735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SliderBackground
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 60
+        width: 1351
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 28, y: 0, z: 37, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c41cfa7ac419a4bb104d44dcd8e7f9
+      internalID: -1645311547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2ae6b577769bfb448b28fc9ee31c656b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Button: -1277087235
+      DropdownBackground: -1122651144
+      DropdownItemBackground: 1437855533
+      Panel: -1667567669
+      ScrollbarBackground: -514142224
+      ScrollbarHandle: -1944628274
+      SliderBackground: -1645311547
+      SliderFillBackground: -664316735
+      SliderHandle: 1211445120
+      ToggleBackground: 1127461124
+      ToggleCheck: -1315963352
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
