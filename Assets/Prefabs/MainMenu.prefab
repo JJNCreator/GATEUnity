@@ -951,7 +951,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2.6
+  m_PixelsPerUnitMultiplier: 4
 --- !u!1 &356171705212421059
 GameObject:
   m_ObjectHideFlags: 0
@@ -4243,7 +4243,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2.43
+  m_PixelsPerUnitMultiplier: 4
 --- !u!114 &4973272846666751161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4924,7 +4924,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2.43
+  m_PixelsPerUnitMultiplier: 4
 --- !u!114 &2566518109143650090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8311,7 +8311,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2.04
 --- !u!1 &5328634777633835979
 GameObject:
   m_ObjectHideFlags: 0
@@ -9299,7 +9299,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2.6
+  m_PixelsPerUnitMultiplier: 4
 --- !u!1 &5817688339301430095
 GameObject:
   m_ObjectHideFlags: 0
@@ -11202,7 +11202,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2.4
 --- !u!114 &5856495456001985529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14806,7 +14806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Num 8/Num 4/Num 5/Num 6
+  m_text: Up/Left/Down/Right
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
