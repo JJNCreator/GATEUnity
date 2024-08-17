@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Closed Umbrella Games
-  productName: Project Venari
+  productName: GATE
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -158,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.Closed-Umbrella-Games.Project-Venari
+    Standalone: com.Closed-Umbrella-Games.GATE
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -279,7 +279,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: f1138ece122e6cf499bb4daef8f4343a, type: 3}
+      m_Icon: {fileID: 2800000, guid: 6dfd12da780c823409e2ea9360a58aa7, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
