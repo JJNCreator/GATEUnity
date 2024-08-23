@@ -15,7 +15,7 @@ Using Unity 2023.1.20f1
 
 ## Demo
 
-A built version of the project can be found under Releases as well as on Itch.io(TODO: Put Itch.io link here).
+A built version of the project can be found under [Releases](https://github.com/JJNCreator/GATEUnity/releases) as well as on Itch.io(TODO: Put Itch.io link here).
 
 ## Getting the project
 
