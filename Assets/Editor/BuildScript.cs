@@ -6,12 +6,12 @@ using UnityEditor.Build.Reporting;
 
 public class BuildScript
 {
-    private const string BUILD_FOLDER_WINDOWS64_DEV = "Builds/Win64/Development/ProjectVenari.exe";
-    private const string BUILD_FOLDER_WINDOWS64_RELEASE = "Builds/Win64/Release/ProjectVenari.exe";
-    private const string BUILD_FOLDER_MACOS_DEV = "Builds/macOS/Development/ProjectVenari";
-    private const string BUILD_FOLDER_MACOS_RELEASE = "Builds/macOS/Release/ProjectVenari";
-    private const string BUILD_FOLDER_LINUX_DEV = "Builds/Linux/Development/ProjectVenari";
-    private const string BUILD_FOLDER_LINUX_RELEASE = "Builds/Linux/Release/ProjectVenari";
+    private const string BUILD_FOLDER_WINDOWS64_DEV = "Builds/Win64/Development/GATEUnity.exe";
+    private const string BUILD_FOLDER_WINDOWS64_RELEASE = "Builds/Win64/Release/GATEUnity.exe";
+    private const string BUILD_FOLDER_MACOS_DEV = "Builds/macOS/Development/GATEUnity";
+    private const string BUILD_FOLDER_MACOS_RELEASE = "Builds/macOS/Release/GATEUnity";
+    private const string BUILD_FOLDER_LINUX_DEV = "Builds/Linux/Development/GATEUnity";
+    private const string BUILD_FOLDER_LINUX_RELEASE = "Builds/Linux/Release/GATEUnity";
 
     [MenuItem("Build/Windows/Development")]
     public static void BuildWindows64Development()
