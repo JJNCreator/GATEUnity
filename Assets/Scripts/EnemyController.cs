@@ -8,8 +8,11 @@ public class EnemyController : MonoBehaviour
     public Transform target;
     public Transform[] waypoints;
     public bool isPatrolling;
+    public LayerMask damageLayerMask;
     private NavMeshAgent _navMeshAgent;
     private int destinationPoint = 0;
+    private float cooldownTimer = 0f;
+    private float attackFrequency = 5f;
 
     void Awake()
     {
@@ -19,12 +22,23 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         isPatrolling = true;
+        cooldownTimer = attackFrequency;
     }
 
     // Update is called once per frame
     void Update()
     {
         AIBehaviour();
+
+        if(cooldownTimer >= 0f)
+        {
+            cooldownTimer -= 1f * Time.deltaTime;
+        }
+        if (cooldownTimer <= 0f)
+        {
+            DamagePlayer();
+
+        }
     }
 
     private void AIBehaviour()
@@ -51,5 +65,17 @@ public class EnemyController : MonoBehaviour
         _navMeshAgent.destination = waypoints[destinationPoint].position;
 
         destinationPoint = (destinationPoint + 1) % waypoints.Length;
+    }
+    private void DamagePlayer()
+    {
+        var ray = new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+        var raycastHitInfo = new RaycastHit();
+        var raycast = Physics.Raycast(ray, out raycastHitInfo, 5f, damageLayerMask);
+        if (raycast)
+        {
+            raycastHitInfo.collider.GetComponent<Health>().AdjustCurrentHealth(-5);
+            cooldownTimer = attackFrequency;
+        }
+        Debug.DrawRay(transform.position, ray.direction);
     }
 }

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight;
     public Transform playerCamera;
     public float turnSmoothTime = 0.1f;
+    public LayerMask damageLayerMask;
 
     private float turnSmoothVelocity;
     private Rigidbody _rb;
@@ -23,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 _currentInputVector;
     private Vector2 _smoothInputVelocity;
     private float _smoothInputSpeed = 0.2f;
+    private float cooldownTimer = 0f;
+    private float attackFrequency = 2.5f;
 
     private bool _hasInitializedInputActions;
 
@@ -34,15 +37,16 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        cooldownTimer = attackFrequency;
     }
 
     private void Update()
     {
-        /*if(_hasInitializedInputActions)
+        if (cooldownTimer >= 0f)
         {
-            UpdateInputs();
-        }*/
+            cooldownTimer -= 1f * Time.deltaTime;
+        }
+        DamageCharacter();
     }
 
     private void FixedUpdate()
@@ -69,6 +73,26 @@ public class PlayerController : MonoBehaviour
             _characterOnGround = false;
         }
     }
+
+    public void DamageCharacter()
+    {
+        var ray = new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+        var raycastHitInfo = new RaycastHit();
+        var raycast = Physics.Raycast(ray, out raycastHitInfo, 5f, damageLayerMask);
+        if(UserInput.Instance.AttackPressed)
+        {
+            if(cooldownTimer <= 0f)
+            {
+                if (raycast)
+                {
+                    raycastHitInfo.collider.GetComponent<Health>().AdjustCurrentHealth(-5);
+                    cooldownTimer = attackFrequency;
+                }
+            }
+        }
+        Debug.DrawRay(transform.position, ray.direction);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         _characterOnGround = true;

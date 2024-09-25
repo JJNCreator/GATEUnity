@@ -12,8 +12,8 @@ TagManager:
   - Ignore NavMesh
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 
