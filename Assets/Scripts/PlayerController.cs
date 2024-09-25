@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 _currentInputVector;
     private Vector2 _smoothInputVelocity;
     private float _smoothInputSpeed = 0.2f;
+    private float cooldownTimer = 0f;
+    private float attackFrequency = 2.5f;
 
     private bool _hasInitializedInputActions;
 
@@ -35,11 +37,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        cooldownTimer = attackFrequency;
     }
 
     private void Update()
     {
+        if (cooldownTimer >= 0f)
+        {
+            cooldownTimer -= 1f * Time.deltaTime;
+        }
         DamageCharacter();
     }
 
@@ -75,9 +81,13 @@ public class PlayerController : MonoBehaviour
         var raycast = Physics.Raycast(ray, out raycastHitInfo, 5f, damageLayerMask);
         if(UserInput.Instance.AttackPressed)
         {
-            if (raycast)
+            if(cooldownTimer <= 0f)
             {
-                raycastHitInfo.collider.GetComponent<Health>().AdjustCurrentHealth(-5);
+                if (raycast)
+                {
+                    raycastHitInfo.collider.GetComponent<Health>().AdjustCurrentHealth(-5);
+                    cooldownTimer = attackFrequency;
+                }
             }
         }
         Debug.DrawRay(transform.position, ray.direction);
