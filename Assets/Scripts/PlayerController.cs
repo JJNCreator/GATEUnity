@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight;
     public Transform playerCamera;
     public float turnSmoothTime = 0.1f;
+    public LayerMask damageLayerMask;
 
     private float turnSmoothVelocity;
     private Rigidbody _rb;
@@ -39,10 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        /*if(_hasInitializedInputActions)
-        {
-            UpdateInputs();
-        }*/
+        DamageCharacter();
     }
 
     private void FixedUpdate()
@@ -69,6 +67,22 @@ public class PlayerController : MonoBehaviour
             _characterOnGround = false;
         }
     }
+
+    public void DamageCharacter()
+    {
+        var ray = new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+        var raycastHitInfo = new RaycastHit();
+        var raycast = Physics.Raycast(ray, out raycastHitInfo, 5f, damageLayerMask);
+        if(UserInput.Instance.AttackPressed)
+        {
+            if (raycast)
+            {
+                raycastHitInfo.collider.GetComponent<Health>().AdjustCurrentHealth(-5);
+            }
+        }
+        Debug.DrawRay(transform.position, ray.direction);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         _characterOnGround = true;

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1393688727848089301}
   - component: {fileID: 2818223208576101002}
   - component: {fileID: 3115957721985246923}
-  m_Layer: 0
+  - component: {fileID: 5575341786224858515}
+  m_Layer: 7
   m_Name: PlayerController
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -53,6 +54,9 @@ MonoBehaviour:
   jumpHeight: 8
   playerCamera: {fileID: 0}
   turnSmoothTime: 0.1
+  damageLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!54 &2818223208576101002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -103,6 +107,20 @@ CapsuleCollider:
   m_Height: 6.0186405
   m_Direction: 1
   m_Center: {x: 0.0081624985, y: 0.032607555, z: 0}
+--- !u!114 &5575341786224858515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579131028825316902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14764e24ebae334792c9aeadb6f550e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 100
 --- !u!1 &4217840625103916149
 GameObject:
   m_ObjectHideFlags: 0
