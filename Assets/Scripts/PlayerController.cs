@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public Transform playerCamera;
     public float turnSmoothTime = 0.1f;
     public LayerMask damageLayerMask;
+    public Animator animator;
 
     private float turnSmoothVelocity;
     private Rigidbody _rb;
@@ -66,10 +68,12 @@ public class PlayerController : MonoBehaviour
             var moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * moveSpeed;
 
             _rb.velocity = new Vector3(moveDirection.x, _rb.velocity.y, moveDirection.z) * direction.magnitude;
+            animator.SetFloat("Forward", Mathf.Clamp01(direction.z));
         }
-        if(UserInput.Instance.JumpPressed && _characterOnGround)
+        if (UserInput.Instance.JumpPressed && _characterOnGround)
         {
             _rb.AddForce(new Vector3(0f, 5f, 0f) * jumpHeight, ForceMode.Impulse);
+            animator.SetBool("Jump", true);
             _characterOnGround = false;
         }
     }
@@ -81,7 +85,9 @@ public class PlayerController : MonoBehaviour
         var raycast = Physics.Raycast(ray, out raycastHitInfo, 5f, damageLayerMask);
         if(UserInput.Instance.AttackPressed)
         {
-            if(cooldownTimer <= 0f)
+            animator.SetTrigger(string.Format("Attack{0}", Random.Range(0, 2) == 0 ? "Right" : "Left"));
+
+            if (cooldownTimer <= 0f)
             {
                 if (raycast)
                 {
@@ -96,5 +102,6 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         _characterOnGround = true;
+        animator.SetBool("Jump", false);
     }
 }
