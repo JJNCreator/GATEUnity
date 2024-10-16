@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public Transform[] waypoints;
     public bool isPatrolling;
     public LayerMask damageLayerMask;
+    public Animator animator;
     private NavMeshAgent _navMeshAgent;
     private int destinationPoint = 0;
     private float cooldownTimer = 0f;
@@ -52,9 +53,9 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            //TODO: Change to GameManager.Instance.GetPlayer
-            _navMeshAgent.SetDestination(target.position);
+            _navMeshAgent.SetDestination(GameManager.Instance.player.transform.position);
         }
+        animator.SetFloat("Forward", Mathf.Clamp01(_navMeshAgent.velocity.magnitude));
     }
 
     private void GoToNextPoint()
@@ -73,6 +74,7 @@ public class EnemyController : MonoBehaviour
         var raycast = Physics.Raycast(ray, out raycastHitInfo, 5f, damageLayerMask);
         if (raycast)
         {
+            animator.SetTrigger(string.Format("Attack{0}", Random.Range(0, 2) == 0 ? "Right" : "Left"));
             raycastHitInfo.collider.GetComponent<Health>().AdjustCurrentHealth(-5);
             cooldownTimer = attackFrequency;
         }
