@@ -12,7 +12,7 @@ public static class SaveFileManager
 
     public static void Save()
     {
-        filePath = string.Format("{0}/ProjectVenariUnity.json", Application.persistentDataPath);
+        filePath = string.Format("{0}/GATEUnity.json", Application.persistentDataPath);
 
         var saveFileChanges = new SaveFile();
         saveFileChanges.vSync = saveFile.vSync;
@@ -35,7 +35,7 @@ public static class SaveFileManager
         if (alreadyLoadedFileForSession)
             return;
 
-        filePath = string.Format("{0}/ProjectVenariUnity.json", Application.persistentDataPath);
+        filePath = string.Format("{0}/GATEUnity.json", Application.persistentDataPath);
 
         if (File.Exists(filePath))
         {
