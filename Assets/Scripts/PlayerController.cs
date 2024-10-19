@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     public LayerMask damageLayerMask;
     public Animator animator;
+    public bool isAttacking;
 
     private float turnSmoothVelocity;
     private Rigidbody _rb;
@@ -87,16 +88,21 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger(string.Format("Attack{0}", Random.Range(0, 2) == 0 ? "Right" : "Left"));
 
-            if (cooldownTimer <= 0f)
+            if (!isAttacking)
             {
                 if (raycast)
                 {
-                    raycastHitInfo.collider.GetComponent<Health>().AdjustCurrentHealth(-5);
-                    cooldownTimer = attackFrequency;
+                    isAttacking = true;
+                    Invoke("ResetAttack", 2f);
                 }
             }
         }
         Debug.DrawRay(transform.position, ray.direction);
+    }
+
+    private void ResetAttack()
+    {
+        isAttacking = false;
     }
 
     private void OnCollisionEnter(Collision collision)
