@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public WaypointGroup[] waypointGroups;
     public PlayerController player;
     public GameObject playerCamera;
+    public Slider playerHealthBar;
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
         player = spawnPlayer.GetComponent<PlayerController>();
         var cameraTarget = spawnPlayer.transform.Find("CameraTarget");
         spawnPlayer.GetComponent<PlayerController>().playerCamera = playerCamera.transform;
+        spawnPlayer.GetComponent<Health>().healthBarSlider = playerHealthBar;
         playerCamera.GetComponent<PlayerCamera>().target = cameraTarget;
     }
     private void SpawnEnemies()

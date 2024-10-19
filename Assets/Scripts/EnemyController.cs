@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public bool isPatrolling;
     public LayerMask damageLayerMask;
     public Animator animator;
+    public bool isAttacking;
     private NavMeshAgent _navMeshAgent;
     private int destinationPoint = 0;
     private float cooldownTimer = 0f;
@@ -74,10 +76,18 @@ public class EnemyController : MonoBehaviour
         var raycast = Physics.Raycast(ray, out raycastHitInfo, 5f, damageLayerMask);
         if (raycast)
         {
-            animator.SetTrigger(string.Format("Attack{0}", Random.Range(0, 2) == 0 ? "Right" : "Left"));
-            raycastHitInfo.collider.GetComponent<Health>().AdjustCurrentHealth(-5);
-            cooldownTimer = attackFrequency;
+            if(!isAttacking)
+            {
+                animator.SetTrigger(string.Format("Attack{0}", Random.Range(0, 2) == 0 ? "Right" : "Left"));
+                isAttacking = true;
+                cooldownTimer = attackFrequency;
+                Invoke("ResetAttack", 2f);
+            }
         }
         Debug.DrawRay(transform.position, ray.direction);
+    }
+    private void ResetAttack()
+    {
+        isAttacking = false;
     }
 }
