@@ -15,6 +15,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     {
         public GamepadIcons xbox;
         public GamepadIcons ps4;
+        public GamepadIcons nSwitch;
 
         protected void OnEnable()
         {
@@ -35,6 +36,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             var icon = default(Sprite);
             if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "DualShockGamepad"))
                 icon = ps4.GetSprite(controlPath);
+            else if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "SwitchProControllerHID"))
+                icon = nSwitch.GetSprite(controlPath);
             else if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "Gamepad"))
                 icon = xbox.GetSprite(controlPath);
 
