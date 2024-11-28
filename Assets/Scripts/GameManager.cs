@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
     public GameObject playerCamera;
     public Slider playerHealthBar;
+    [SerializeField] private GameObject _minimapCamera;
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -47,6 +48,8 @@ public class GameManager : MonoBehaviour
         spawnPlayer.GetComponent<PlayerController>().playerCamera = playerCamera.transform;
         spawnPlayer.GetComponent<Health>().healthBarSlider = playerHealthBar;
         playerCamera.GetComponent<PlayerCamera>().target = cameraTarget;
+        _minimapCamera.transform.SetParent(spawnPlayer.transform, false);
+        _minimapCamera.transform.position = new Vector3(0f, 0f, 0f);
     }
     private void SpawnEnemies()
     {
