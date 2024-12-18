@@ -1,15 +1,19 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System.Net.NetworkInformation;
 using UnityEngine.UI;
-using UnityEngine.InputSystem.Samples.RebindUI;
-using static UnityEditor.PlayerSettings;
-using NUnit.Framework.Internal.Builders;
+using UnityEngine;
+
+////TODO: have updateBindingUIEvent receive a control path string, too (in addition to the device layout name)
 
 namespace UnityEngine.InputSystem.Samples.RebindUI
 {
-    public class KeyboardMouseGameIcons : MonoBehaviour
+    /// <summary>
+    /// This is an example for how to override the default display behavior of bindings. The component
+    /// hooks into <see cref="RebindActionUI.updateBindingUIEvent"/> which is triggered when UI display
+    /// of a binding should be refreshed. It then checks whether we have an icon for the current binding
+    /// and if so, replaces the default text display with an icon.
+    /// </summary>
+    public class GamepadIcons : MonoBehaviour
     {
         public InputIconSO inputIcons;
 
@@ -23,16 +27,19 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 component.UpdateBindingDisplay();
             }
         }
+
         protected void OnUpdateBindingDisplay(RebindActionUI component, string bindingDisplayString, string deviceLayoutName, string controlPath)
         {
             if (string.IsNullOrEmpty(deviceLayoutName) || string.IsNullOrEmpty(controlPath))
                 return;
 
             var icon = default(Sprite);
-            if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "Keyboard"))
-                icon = inputIcons.mkIcons.GetSprite(controlPath);
-            else if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "Mouse"))
-                icon = inputIcons.mkIcons.GetSprite(controlPath);
+            if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "DualShockGamepad"))
+                icon = inputIcons.dsIcons.GetSprite(controlPath);
+            else if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "SwitchProControllerHID"))
+                icon = inputIcons.nSwitchIcons.GetSprite(controlPath);
+            else if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "Gamepad"))
+                icon = inputIcons.xboxIcons.GetSprite(controlPath);
 
             var textComponent = component.bindingText;
 
@@ -54,4 +61,3 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         }
     }
 }
-

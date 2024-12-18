@@ -819,103 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbfe9731bce2b84792847faea1b8c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icons:
-    zeroKey: {fileID: 21300000, guid: 1ad086928343a8f46ab761c328a94f43, type: 3}
-    oneKey: {fileID: 21300000, guid: 9204bffe69abcb84f9648713fdefc31e, type: 3}
-    twoKey: {fileID: 21300000, guid: 5dc23d1886c0ee0409efd44df7db2bda, type: 3}
-    threeKey: {fileID: 21300000, guid: cb283c81b19c1484fa9b601f69fa4967, type: 3}
-    fourKey: {fileID: 21300000, guid: 50e808bbb20ff78418b1e259f2903c32, type: 3}
-    fiveKey: {fileID: 21300000, guid: 276f9f98892f65647a7d1543a7137d74, type: 3}
-    sixKey: {fileID: 21300000, guid: 61ba49f07d7aa454a9c75a558582f35c, type: 3}
-    sevenKey: {fileID: 21300000, guid: d0dd2109e85a1c349bbe0cacd0b02e3b, type: 3}
-    eightKey: {fileID: 21300000, guid: 8a2a8b8f840adf74094c48e974d0996b, type: 3}
-    nineKey: {fileID: 21300000, guid: 422672a29e6aa004b956b283c2fb032c, type: 3}
-    aKey: {fileID: 21300000, guid: 96f8d82e448cdfa48ac5c1d044c9bb3d, type: 3}
-    altKey: {fileID: 21300000, guid: d35a56806cdb2084fb3178133109e3e2, type: 3}
-    asteriskKey: {fileID: 21300000, guid: 0ae13a7c149d16048b34a3d434b81fc4, type: 3}
-    bKey: {fileID: 21300000, guid: 5b60c52395803d343bc938c8fe5488b0, type: 3}
-    backspaceAltKey: {fileID: 21300000, guid: c0c36ef48e0904a42b639c9e910699d6, type: 3}
-    backspaceKey: {fileID: 21300000, guid: a60d0616973614d478fd008b6a83da1d, type: 3}
-    bracketsLKey: {fileID: 21300000, guid: 4b08bd186e0b31b48aaad97450b74b06, type: 3}
-    bracketsRKey: {fileID: 21300000, guid: e1d9aea9caeaa7f4099668dacd396754, type: 3}
-    cKey: {fileID: 21300000, guid: 7e4395b93c2aca84ba0322f0d2e7ea14, type: 3}
-    capsLockKey: {fileID: 21300000, guid: 91536c5d68f229f4f85eea8954eaedb6, type: 3}
-    ctrlKey: {fileID: 21300000, guid: 86be8f65fad8b454ca21a78f1a01963c, type: 3}
-    dKey: {fileID: 21300000, guid: e93d09aca6326e741a195a61479795e9, type: 3}
-    deleteKey: {fileID: 21300000, guid: 7c67a7b632e922547be69f8421be0a70, type: 3}
-    downKey: {fileID: 21300000, guid: 596e08f3070bf4946b193b23c7f877aa, type: 3}
-    eKey: {fileID: 21300000, guid: ca0a234e0f4cb7d4ab22b1e95f41a395, type: 3}
-    endKey: {fileID: 21300000, guid: e996937f57612f74c8b7346fb9064106, type: 3}
-    enterAltKey: {fileID: 21300000, guid: df4b08f85623a4f4db0e27a5c1d3f1fc, type: 3}
-    enterKey: {fileID: 21300000, guid: 3d1f88543c53e5b498be8ee4a94663a6, type: 3}
-    enterTallKey: {fileID: 21300000, guid: 7f4693c02c4c962478061522db785a8e, type: 3}
-    escKey: {fileID: 21300000, guid: 975d50cc0d41a674fafb64e341deb23d, type: 3}
-    f1Key: {fileID: 21300000, guid: 8398e6d28e82eea4ca71e820938b46aa, type: 3}
-    f2Key: {fileID: 21300000, guid: 74455ea06d2135e40a9f86735aa82aee, type: 3}
-    f3Key: {fileID: 21300000, guid: 0d7fa63b867bd13479afda4f67b9b2a0, type: 3}
-    f4Key: {fileID: 21300000, guid: 720dfb2d2ccd0b14a815a6a939b6db71, type: 3}
-    f5Key: {fileID: 21300000, guid: 6cbc5646a25e97f4685d0096f8b771b1, type: 3}
-    f6Key: {fileID: 21300000, guid: 575c5959327a4fa41a7ab8ab4ee50346, type: 3}
-    f7Key: {fileID: 21300000, guid: 97a67a5e03980694f8e6a570d9ef9a4e, type: 3}
-    f8Key: {fileID: 21300000, guid: d58b14f3f93bac24ca3a3952aaaeb821, type: 3}
-    f9Key: {fileID: 21300000, guid: 81948edd6eaba904a9bef3b3a5c438d2, type: 3}
-    f10Key: {fileID: 21300000, guid: 8bbb37a8815045b4fae709496d293bb1, type: 3}
-    f11Key: {fileID: 21300000, guid: f199ffebff8a3e84e9691a86d55c5712, type: 3}
-    f12Key: {fileID: 21300000, guid: 355131a9848130249b4e2ba7b73b4013, type: 3}
-    fKey: {fileID: 21300000, guid: cdbae15d85e8c8141a05d5c2875a0749, type: 3}
-    gKey: {fileID: 21300000, guid: 1f8e398e45c6bf94e877ccca6ad5df0f, type: 3}
-    hKey: {fileID: 21300000, guid: d3de779f1e7f0fd4b8d43e4ce593ff21, type: 3}
-    homeKey: {fileID: 21300000, guid: bc86b1dc93a3f3e41882b6a86dc5eeb3, type: 3}
-    iKey: {fileID: 21300000, guid: 9bc9cff21d373144a852c5e30ed7f2ee, type: 3}
-    insKey: {fileID: 21300000, guid: 942fb4c21edbb1047a71c49956d65d83, type: 3}
-    jKey: {fileID: 21300000, guid: 51f69cec87e215247b99243a708bb8ba, type: 3}
-    kKey: {fileID: 21300000, guid: 9319895950a3d25429a49f388009f30d, type: 3}
-    carrotRightKey: {fileID: 21300000, guid: 28bca50520251154ea0d57ccec36425a, type: 3}
-    carrotLeftKey: {fileID: 21300000, guid: 0d29a8af7f05b17479a39dff93a14f53, type: 3}
-    lKey: {fileID: 21300000, guid: 6a8850ca34adfa74d970151eea31edb5, type: 3}
-    leftArrowKey: {fileID: 21300000, guid: cc3618b5b66728e458bddabea4c3771d, type: 3}
-    mKey: {fileID: 21300000, guid: e5acadb1e32d85d45b2962f1fca725a2, type: 3}
-    minusKey: {fileID: 21300000, guid: e8a283f18995f174ebdc7d15c4af6566, type: 3}
-    mouseLeftKey: {fileID: 21300000, guid: 3aabd0e2311dae645b93d037514281ac, type: 3}
-    mouseMiddleKey: {fileID: 21300000, guid: c9821a885d97bae47a8599517ecdc7c6, type: 3}
-    mouseRightKey: {fileID: 21300000, guid: f3042425a0fede647abb3d4aceccd6f0, type: 3}
-    mouseScrollDown: {fileID: 21300000, guid: f5cc200fde6f7b74db556db9da35ebdb, type: 3}
-    mouseScrollKey: {fileID: 21300000, guid: 161d2971b6e2e9a4a9a055b1812500a0, type: 3}
-    mouseScrollUpKey: {fileID: 21300000, guid: 6c9f802ac169e8d45be5a14ce898c48b, type: 3}
-    mouseSimpleKey: {fileID: 21300000, guid: b04ac94c1ed5bff45b2287883c17979f, type: 3}
-    mouseXKey: {fileID: 21300000, guid: f56647af54360e0498dec392183d1967, type: 3}
-    mouseXY: {fileID: 21300000, guid: a36ee5514817a624a8bdf5cf321427fa, type: 3}
-    mouseYKey: {fileID: 21300000, guid: de6af4a91a089c34798b9252f7d69f11, type: 3}
-    nKey: {fileID: 21300000, guid: 5eaf4c4eb7a2d954288a5cd170cd7370, type: 3}
-    numLockKey: {fileID: 21300000, guid: cb56a4b542c630244970d7ec9a607f90, type: 3}
-    oKey: {fileID: 21300000, guid: 6ed76e308937ddb43af272936f41ea87, type: 3}
-    pKey: {fileID: 21300000, guid: 113c5a745cf453c4ea2e8e683a3fe7fb, type: 3}
-    pageDownKey: {fileID: 21300000, guid: ac041ab7b05798d42b4b0da6f37950f5, type: 3}
-    pageUpKey: {fileID: 21300000, guid: 2588a58bc91d017478d151e10159ce14, type: 3}
-    plusKey: {fileID: 21300000, guid: a4065650aa71057439adef6a256af2b5, type: 3}
-    plusTallKey: {fileID: 21300000, guid: 0a6f96175ceaa4d42a175c7041b88f3f, type: 3}
-    prtScrnKey: {fileID: 21300000, guid: 184a9be20b34d714a85b1497d8615514, type: 3}
-    qKey: {fileID: 21300000, guid: 68f5e60f0dfa3744582ff0ea7d61217c, type: 3}
-    questionMarkKey: {fileID: 21300000, guid: 7218516be6b0ab14e9f063e9afaaef4e, type: 3}
-    quotationKey: {fileID: 21300000, guid: dcf3db6528740344fb7dfe0318c23a37, type: 3}
-    rKey: {fileID: 21300000, guid: 6e5bcb3cc334f9940adf4ccda6e0ba53, type: 3}
-    rightArrowKey: {fileID: 21300000, guid: cb62c7cb986dd61478ba1c0697bcb894, type: 3}
-    sKey: {fileID: 21300000, guid: e783ca72027894446b2e6df7d6661388, type: 3}
-    semicolonKey: {fileID: 21300000, guid: f0c94a25b7a180e4fbc7f30ba3a5ffd0, type: 3}
-    shiftKey: {fileID: 21300000, guid: b22a344cb0cf18241b9aac0cca757ceb, type: 3}
-    shiftSuperwideKey: {fileID: 21300000, guid: b05432952ee6ceb4c8e43576d26aa8a2, type: 3}
-    slashKey: {fileID: 21300000, guid: 6c038d501d1dab042be39e0fe28d3e13, type: 3}
-    spaceKey: {fileID: 21300000, guid: 6b997967e5f972e448969130624e65f7, type: 3}
-    tKey: {fileID: 21300000, guid: 23d71bb595a1a14449838ee8bdba3fe1, type: 3}
-    tabKey: {fileID: 21300000, guid: df9941e481166fa408a8ddcefc191757, type: 3}
-    tildeKey: {fileID: 21300000, guid: dce99d22b7c71c8408e70b79c61bd938, type: 3}
-    uKey: {fileID: 21300000, guid: c8ff74df3efd43244a243a16874bfafa, type: 3}
-    upKey: {fileID: 21300000, guid: cd54e7970c408e04a90ff1aa48c5b117, type: 3}
-    vKey: {fileID: 21300000, guid: 1356e4008d5a28c4fb639f11d91ece36, type: 3}
-    wKey: {fileID: 21300000, guid: cc8b2b4cb2ddca54a8907ef0c409bac0, type: 3}
-    xKey: {fileID: 21300000, guid: daf323996be33184fb07c245491ff65f, type: 3}
-    yKey: {fileID: 21300000, guid: e6f3b4f9af703bb4dacd39d4f03a61b9, type: 3}
-    zKey: {fileID: 21300000, guid: 9e974248bdb0eb043a0810fa1e44e102, type: 3}
+  inputIcons: {fileID: 11400000, guid: 097a2e2471cdfb24eb03739de4fa6969, type: 2}
 --- !u!1 &283937098886852397
 GameObject:
   m_ObjectHideFlags: 0
@@ -12496,7 +12400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5304757846787348068}
   - component: {fileID: 1566589111860420182}
-  - component: {fileID: 4769270517236462329}
+  - component: {fileID: 1940267660721279643}
   m_Layer: 5
   m_Name: ControllerBindings
   m_TagString: Untagged
@@ -12553,7 +12457,7 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &4769270517236462329
+--- !u!114 &1940267660721279643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12562,69 +12466,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8728304449022426848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84cd9b84e0604a9abafb77712f1df90a, type: 3}
+  m_Script: {fileID: 11500000, guid: c255f138462f8014e9420d2cfc57650c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xbox:
-    buttonSouth: {fileID: 21300000, guid: ab123c29e04a535479be8c1fd35ed4c1, type: 3}
-    buttonNorth: {fileID: 21300000, guid: 0292af87337160048830e9efd0a29f7e, type: 3}
-    buttonEast: {fileID: 21300000, guid: bf6e2e5b29d85ff46a6cb4c73d010bd1, type: 3}
-    buttonWest: {fileID: 21300000, guid: d34f2e6aa3ea6514cb78915fb40adc86, type: 3}
-    startButton: {fileID: 21300000, guid: 3dd76f949e016154fad59f7ddc308ff0, type: 3}
-    selectButton: {fileID: 21300000, guid: 55785bcda8e61644cb5dcabf8a7c7a4f, type: 3}
-    leftTrigger: {fileID: 21300000, guid: 10c2c242c4a6ee7488db4d71865a5ba5, type: 3}
-    rightTrigger: {fileID: 21300000, guid: 0e4f7be21c7ed8f479aa0976df9b8161, type: 3}
-    leftShoulder: {fileID: 21300000, guid: a30f7c75260eafc47b70254305b1fe6e, type: 3}
-    rightShoulder: {fileID: 21300000, guid: 372fed910c2ff0c44b49e8b1ca2cc1a4, type: 3}
-    dpad: {fileID: 21300000, guid: e47a9025b7d99ff45855ee2d0b3df561, type: 3}
-    dpadUp: {fileID: 21300000, guid: a0402b65342552642b73d7ea83c74b17, type: 3}
-    dpadDown: {fileID: 21300000, guid: 2c0be3dc6fccfb147be8b1409672e77d, type: 3}
-    dpadLeft: {fileID: 21300000, guid: 11eab81abd8a68a44832f54b1560213a, type: 3}
-    dpadRight: {fileID: 21300000, guid: ec65fe03e78e4b64b842b6c4dded6a0e, type: 3}
-    leftStick: {fileID: 21300000, guid: d42dd8101ebd6e448b0c3523e3d5ba6a, type: 3}
-    rightStick: {fileID: 21300000, guid: e9872fc025132d34bad8e1dc2ade0a22, type: 3}
-    leftStickPress: {fileID: 21300000, guid: 4c1bc336b7306364b90a1fc9792b2e97, type: 3}
-    rightStickPress: {fileID: 21300000, guid: 2d8acf7adf1f7414f97ea8209cce7c49, type: 3}
-  ps4:
-    buttonSouth: {fileID: 21300000, guid: d315a212d39948c4f83b888259ecbabf, type: 3}
-    buttonNorth: {fileID: 21300000, guid: 2e464f0ad9dbc2e458b18a89f1ddd146, type: 3}
-    buttonEast: {fileID: 21300000, guid: a6dae8ba041c63f4aac6f59657c0a474, type: 3}
-    buttonWest: {fileID: 21300000, guid: 5859dd128376b61458ab977119137553, type: 3}
-    startButton: {fileID: 21300000, guid: 5f86b0ca0af33514bb1021fca3ff485f, type: 3}
-    selectButton: {fileID: 21300000, guid: b678c29a4edbfd541be38fc7cf4f11a0, type: 3}
-    leftTrigger: {fileID: 21300000, guid: 9ec80b79fbf25b0438c006488c02e410, type: 3}
-    rightTrigger: {fileID: 21300000, guid: c9226040c68abbe4eb6d2bad62125a01, type: 3}
-    leftShoulder: {fileID: 21300000, guid: 5c484a2cc7d3f0d4da6b4e6b3fb53ce9, type: 3}
-    rightShoulder: {fileID: 21300000, guid: 21649fb629da4af4a80299118769434d, type: 3}
-    dpad: {fileID: 21300000, guid: 2df156bb21411a040a5e70617b6595e1, type: 3}
-    dpadUp: {fileID: 21300000, guid: a21526d8732e9784e9c118786c497dab, type: 3}
-    dpadDown: {fileID: 21300000, guid: 4766b938a8adced43af8a06badc05d0b, type: 3}
-    dpadLeft: {fileID: 21300000, guid: f8e1f03058767bd48a33c03bf0c0dcb9, type: 3}
-    dpadRight: {fileID: 21300000, guid: b56966f25bb0bee41bd7561c64d42277, type: 3}
-    leftStick: {fileID: 21300000, guid: 539f743acaac4074995c3e8e2cc4def0, type: 3}
-    rightStick: {fileID: 21300000, guid: cd6d9791f65f80741b7738bdef12fb34, type: 3}
-    leftStickPress: {fileID: 21300000, guid: d849991adbd359d4080748dcef2cbdfc, type: 3}
-    rightStickPress: {fileID: 21300000, guid: 9f36514028681e743b120fcc11ba672c, type: 3}
-  nSwitch:
-    buttonSouth: {fileID: 21300000, guid: 8cec7822acba4724a96e895996bdfef3, type: 3}
-    buttonNorth: {fileID: 21300000, guid: 9aef5604eabbb094389656e7479411da, type: 3}
-    buttonEast: {fileID: 21300000, guid: f28affe7181d53b4e84236897d9eb0f3, type: 3}
-    buttonWest: {fileID: 21300000, guid: e507e9af838051746a8a517fb27166f1, type: 3}
-    startButton: {fileID: 21300000, guid: 51bbb45f8c0b4f94990cd167cb8ba19f, type: 3}
-    selectButton: {fileID: 21300000, guid: d7b78ceb24d9f604298821b8cd2a7105, type: 3}
-    leftTrigger: {fileID: 21300000, guid: 621bfa983a5744e4dbc27c6bc88080ac, type: 3}
-    rightTrigger: {fileID: 21300000, guid: 94a30e87bff90194c869f76d194eef7e, type: 3}
-    leftShoulder: {fileID: 21300000, guid: a136c709e902dc44bbdd63c250fffc4e, type: 3}
-    rightShoulder: {fileID: 21300000, guid: 591b54f2d06bc9846acb8f7e9bf996f4, type: 3}
-    dpad: {fileID: 21300000, guid: ed992c384d9984142b47738999d7dba2, type: 3}
-    dpadUp: {fileID: 21300000, guid: a0c133a02ec883749bf4387d04f4a878, type: 3}
-    dpadDown: {fileID: 21300000, guid: ba02b37b875f553468054656acd76c76, type: 3}
-    dpadLeft: {fileID: 21300000, guid: ef6a79bd4d3a8084b9f8c73cf74e2f02, type: 3}
-    dpadRight: {fileID: 21300000, guid: 1ebf02d563c53ec4994da8cbf7f9ee2d, type: 3}
-    leftStick: {fileID: 21300000, guid: 253e38e0d24eb804abe6bcdf625c2d18, type: 3}
-    rightStick: {fileID: 21300000, guid: b32eec92e602d584ba0f3c5ca024213c, type: 3}
-    leftStickPress: {fileID: 21300000, guid: 0a2e82a2344e7834a9e5fbb254afa512, type: 3}
-    rightStickPress: {fileID: 21300000, guid: c1ccf020cbd618d42ab74eaf707641d6, type: 3}
+  inputIcons: {fileID: 11400000, guid: 097a2e2471cdfb24eb03739de4fa6969, type: 2}
 --- !u!1 &8876507430588324578
 GameObject:
   m_ObjectHideFlags: 0

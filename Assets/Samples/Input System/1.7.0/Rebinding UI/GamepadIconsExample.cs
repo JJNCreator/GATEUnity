@@ -1,5 +1,7 @@
 using System;
+using System.Net.NetworkInformation;
 using UnityEngine.UI;
+using UnityEngine;
 
 ////TODO: have updateBindingUIEvent receive a control path string, too (in addition to the device layout name)
 
