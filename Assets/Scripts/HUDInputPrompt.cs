@@ -40,7 +40,9 @@ public class HUDInputPrompt : MonoBehaviour
     {
         bool controller = action.devices[0].name == "XInputControllerWindows" ||
             action.devices[0].name == "SwitchProControllerHID" ||
-            action.devices[0].name == "DualShockGamepad";
+            action.devices[0].name == "DualShock4GamepadHID" ||
+            action.devices[0].name == "DualShock3GamepadHID" ||
+            action.devices[0].name == "DualSenseGamepadHID";
         SwitchBetweenInputDevices(controller, action.devices[0].layout);
     }
     private void SwitchBetweenInputDevices(bool isController, string deviceLayoutName)
@@ -74,9 +76,9 @@ public class HUDInputPrompt : MonoBehaviour
         actionPath = actionPath.Replace("/Mouse/", "");
         actionPath = actionPath.Replace("/XInputControllerWindows/", "");
         actionPath = actionPath.Replace("/SwitchProControllerHID/", "");
-        actionPath = actionPath.Replace("/DualShockGamepad/", "");
-
-        UnityEngine.Debug.Log(actionPath);
+        actionPath = actionPath.Replace("/DualShock4GamepadHID/", "");
+        actionPath = actionPath.Replace("/DualShock3GamepadHID/", "");
+        actionPath = actionPath.Replace("/DualSenseGamepadHID/", "");
 
         if (isController)
         {
