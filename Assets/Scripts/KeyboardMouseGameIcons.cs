@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem.Samples.RebindUI;
-using static UnityEditor.PlayerSettings;
 using NUnit.Framework.Internal.Builders;
 
 namespace UnityEngine.InputSystem.Samples.RebindUI
