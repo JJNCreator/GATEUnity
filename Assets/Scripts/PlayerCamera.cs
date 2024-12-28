@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerCamera : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerCamera : MonoBehaviour
     public float distanceFromTarget = 3f;
     public bool xInverted;
     public bool yInverted;
+    [SerializeField] private Volume _motionBlurVolume;
 
     private float rotationY;
     private float rotationX;
@@ -65,5 +67,6 @@ public class PlayerCamera : MonoBehaviour
         mouseSensitivityY = GameSettings.YSensitivity;
         xInverted = GameSettings.XInverted;
         yInverted = GameSettings.YInverted;
+        _motionBlurVolume.weight = (GameSettings.MotionBlur) ? 1f : 0f;
     }
 }

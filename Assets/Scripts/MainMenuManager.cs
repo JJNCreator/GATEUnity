@@ -278,5 +278,10 @@ public class MainMenuManager : MonoBehaviour
         _controllerBindings.SetActive(controller);
     }
 
+    public void SetMotionBlur(bool b)
+    {
+        GameSettings.MotionBlur = b;
+    }
+
     #endregion
 }

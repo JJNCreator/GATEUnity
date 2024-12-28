@@ -290,6 +290,10 @@ public class PauseMenuManager : MonoBehaviour
         _mouseKeyboardBindings.SetActive(!controller);
         _controllerBindings.SetActive(controller);
     }
+    public void SetMotionBlur(bool b)
+    {
+        GameSettings.MotionBlur = b;
+    }
     public void OnClickQuit()
     {
         AudioListener.pause = !AudioListener.pause;
