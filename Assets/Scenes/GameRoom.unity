@@ -3874,6 +3874,7 @@ MonoBehaviour:
   distanceFromTarget: 12.76
   xInverted: 0
   yInverted: 0
+  _motionBlurVolume: {fileID: 1657149683}
 --- !u!1 &1539644720
 GameObject:
   m_ObjectHideFlags: 0

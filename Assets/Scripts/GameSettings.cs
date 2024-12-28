@@ -125,4 +125,15 @@ public static class GameSettings
             SaveFileManager.saveFile.yInverted = value;
         }
     }
+    public static bool MotionBlur
+    {
+        get
+        {
+            return (SaveFileManager.saveFile != null) ? SaveFileManager.saveFile.motionBlur : true;
+        }
+        set
+        {
+            SaveFileManager.saveFile.motionBlur = value;
+        }
+    }
 }

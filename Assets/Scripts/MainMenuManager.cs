@@ -203,6 +203,16 @@ public class MainMenuManager : MonoBehaviour
 #endif
     }
 
+    public void OnDiscordClicked()
+    {
+        Application.OpenURL("https://discord.gg/RjA9fCw2hT");
+    }
+
+    public void OnGitHubClicked()
+    {
+        Application.OpenURL("https://github.com/JJNCreator/GATEUnity");
+    }
+
     public void SetVSync(bool b)
     {
         GameSettings.VSync = b;
@@ -266,6 +276,11 @@ public class MainMenuManager : MonoBehaviour
     {
         _mouseKeyboardBindings.SetActive(!controller);
         _controllerBindings.SetActive(controller);
+    }
+
+    public void SetMotionBlur(bool b)
+    {
+        GameSettings.MotionBlur = b;
     }
 
     #endregion

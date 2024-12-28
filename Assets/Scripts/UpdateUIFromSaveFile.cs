@@ -19,7 +19,8 @@ public class UpdateUIFromSaveFile : MonoBehaviour
         XSensitivity = 7,
         YSensitivity = 8,
         XInverted = 9,
-        YInverted = 10
+        YInverted = 10,
+        MotionBlur = 11
     }
     public SettingType type;
     // Start is called before the first frame update
@@ -64,6 +65,9 @@ public class UpdateUIFromSaveFile : MonoBehaviour
                 break;
             case SettingType.YInverted:
                 GetComponent<Toggle>().isOn = GameSettings.YInverted;
+                break;
+            case SettingType.MotionBlur:
+                GetComponent<Toggle>().isOn = GameSettings.MotionBlur;
                 break;
         }
     }

@@ -27,6 +27,7 @@ public static class SaveFileManager
         saveFileChanges.xInverted = saveFile.xInverted;
         saveFileChanges.yInverted = saveFile.yInverted;
         saveFileChanges.keyBindings = saveFile.keyBindings;
+        saveFileChanges.motionBlur = saveFile.motionBlur;
         string writeToFile = JsonUtility.ToJson(saveFileChanges, true);
         File.WriteAllText(filePath, writeToFile);
     }
@@ -64,6 +65,7 @@ public static class SaveFileManager
             saveFile.xInverted = false;
             saveFile.yInverted = false;
             saveFile.keyBindings = string.Empty;
+            saveFile.motionBlur = true;
 
             Save();
         }
@@ -86,4 +88,5 @@ public class SaveFile
     public bool xInverted;
     public bool yInverted;
     public string keyBindings;
+    public bool motionBlur;
 }
