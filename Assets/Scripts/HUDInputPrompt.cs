@@ -50,7 +50,7 @@ public class HUDInputPrompt : MonoBehaviour
         var action = _playerInput.actions.FindAction(_inputActionName);
         var mkIcons = _inputIcons.mkIcons;
         var gamepadIcons = default(GamepadIcons);
-        UnityEngine.Debug.Log(deviceLayoutName);
+        //UnityEngine.Debug.Log(deviceLayoutName);
         if(InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "DualShockGamepad"))
         {
             gamepadIcons = _inputIcons.dsIcons;
