@@ -26,7 +26,10 @@ public class UpdateUIFromSaveFile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateValue();
+        if(!SaveFileManager.appliedSettingsForSession)
+        {
+            UpdateValue();
+        }
     }
 
     private void UpdateValue()
