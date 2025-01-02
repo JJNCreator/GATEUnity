@@ -60,6 +60,12 @@ public class MainMenuManager : MonoBehaviour
         SetResolutionOptions();
         SetQualityOptions();
 
+        if(!SaveFileManager.appliedSettingsForSession)
+        {
+            ApplySettings();
+            SaveFileManager.appliedSettingsForSession = true;
+        }
+
         _masterGroup.audioMixer.SetFloat("MasterVolume", GameSettings.MasterVolume);
         _musicGroup.audioMixer.SetFloat("MusicVolume", GameSettings.MusicVolume);
         _sfxGroup.audioMixer.SetFloat("SFXVolume", GameSettings.SFXVolume);
@@ -281,6 +287,22 @@ public class MainMenuManager : MonoBehaviour
     public void SetMotionBlur(bool b)
     {
         GameSettings.MotionBlur = b;
+    }
+
+    public void ApplySettings()
+    {
+        SetVSync(GameSettings.VSync);
+        SetResolutionChoice(GameSettings.ResolutionChoice);
+        SetFullscreen(GameSettings.Fullscreen);
+        SetQualityLevel(GameSettings.QualityLevelChoice);
+        SetMasterVolume(GameSettings.MasterVolume);
+        SetMusicVolume(GameSettings.MusicVolume);
+        SetSFXVolume(GameSettings.SFXVolume);
+        SetXSensitivity(GameSettings.XSensitivity);
+        SetYSensitivity(GameSettings.YSensitivity);
+        SetXInverted(GameSettings.XInverted);
+        SetYInverted(GameSettings.YInverted);
+        LoadKeyBindings();
     }
 
     #endregion

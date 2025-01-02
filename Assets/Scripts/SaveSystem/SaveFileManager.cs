@@ -7,8 +7,9 @@ using UnityEngine.Rendering;
 public static class SaveFileManager
 {
     public static SaveFile saveFile = new();
+    public static bool alreadyLoadedFileForSession;
+    public static bool appliedSettingsForSession;
     private static string filePath;
-    private static bool alreadyLoadedFileForSession;
 
     public static void Save()
     {
