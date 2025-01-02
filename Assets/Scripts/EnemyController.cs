@@ -40,7 +40,6 @@ public class EnemyController : MonoBehaviour
         if (cooldownTimer <= 0f)
         {
             DamagePlayer();
-
         }
     }
 
@@ -73,11 +72,12 @@ public class EnemyController : MonoBehaviour
     {
         var ray = new Ray(transform.position, transform.TransformDirection(Vector3.forward));
         var raycastHitInfo = new RaycastHit();
-        var raycast = Physics.Raycast(ray, out raycastHitInfo, 5f, damageLayerMask);
+        var raycast = Physics.Raycast(ray, out raycastHitInfo, 3f, damageLayerMask);
         if (raycast)
         {
             if(!isAttacking)
             {
+                _navMeshAgent.SetDestination(transform.position);
                 animator.SetTrigger(string.Format("Attack{0}", Random.Range(0, 2) == 0 ? "Right" : "Left"));
                 isAttacking = true;
                 cooldownTimer = attackFrequency;
