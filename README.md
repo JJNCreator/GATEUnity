@@ -21,11 +21,15 @@ A built version of the project can be found under [Releases](https://github.com/
 
 ## Getting the project
 
-This version of the project is for **Unity** Developers. If you're an Unreal or Godot user, please go to [GATEUnreal](https://github.com/JJNCreator/GATEUnreal) or [GATEGodot](https://github.com/JJNCreator/GATEGodot).
+This version of the project is for **Unity** Developers. If you're an Unreal, Godot, or Roblox user, please go to [GATEUnreal](https://github.com/JJNCreator/GATEUnreal), [GATEGodot](https://github.com/JJNCreator/GATEGodot), or [GATERoblox](https://github.com/JJNCreator/GATERoblox).
 
 This project currently uses **Unity 2023.1.20f1**.
 
 Here are the steps:
-1. Make a fork of the repository.
-2. Clone the new fork using your Git client.
+1. Select "Use this template" and go through the steps.
+2. Clone the new repository using your Git client.
 3. Once cloning is done, open the project in Unity Hub.
+
+## Issues/Bug Reports
+
+Please report any bugs and/or issues to the [GATE Discord server](https://discord.gg/RjA9fCw2hT).
