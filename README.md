@@ -4,9 +4,13 @@
     <img src="DocsImages/MascotAndLogo.png" width="400" alt="GATE Logo">
 </p>
 
+![Static Badge](https://img.shields.io/badge/discord-join%2520server?color=%235865F2&link=https%3A%2F%2Fdiscord.gg%2FRjA9fCw2hT)
+![Static Badge](https://img.shields.io/badge/license-MIT-blue)
+![Static Badge](https://img.shields.io/badge/latest-2025.1.0.0.48pa-blue)
+
 ## Tech demo and project template
 
-The **Game Assets & Technology Example** is an open-source game project designed to help 
+The **Game Assets & Technology Example** is an open-source game project template designed to help 
 game developers make their own games. It includes a fully functional game that comes with 
 a main menu, a game level, a playable character, enemy NPCs, a task/quest system, full 
 controller support, and a save/load system.
