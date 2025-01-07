@@ -35,6 +35,10 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject _mouseKeyboardBindings;
     [SerializeField] private GameObject _controllerBindings;
     [SerializeField] private InputActionAsset _inputActions;
+    [SerializeField] private Sprite[] _devGalleryScreenshots;
+    [SerializeField] private Image _devGalleryImage;
+
+    private int _devGalleryImageIndex = 0;
 
     [SerializeField] private TMP_Dropdown _resolutionDropdown;
     [SerializeField] private TMP_Dropdown _qualityLevelDropdown;
@@ -303,6 +307,27 @@ public class MainMenuManager : MonoBehaviour
         SetXInverted(GameSettings.XInverted);
         SetYInverted(GameSettings.YInverted);
         LoadKeyBindings();
+    }
+
+    public void ChangeExtraGalleryImage(bool forward)
+    {
+        if(forward)
+        {
+            _devGalleryImageIndex++;
+            if(_devGalleryImageIndex > _devGalleryScreenshots.Length - 1)
+            {
+                _devGalleryImageIndex = 0;
+            }
+        }
+        else
+        {
+            _devGalleryImageIndex--;
+            if(_devGalleryImageIndex < 0)
+            {
+                _devGalleryImageIndex = _devGalleryScreenshots.Length - 1;
+            }
+        }
+        _devGalleryImage.sprite = _devGalleryScreenshots[_devGalleryImageIndex];
     }
 
     #endregion
