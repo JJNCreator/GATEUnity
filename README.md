@@ -4,7 +4,7 @@
     <img src="DocsImages/MascotAndLogo.png" width="400" alt="GATE Logo">
 </p>
 
-![Discord](https://img.shields.io/discord/1300158572784521267?color=%235865F2)
+[![Discord - https://discord.gg/RjA9fCw2hT](https://img.shields.io/discord/1300158572784521267?color=%235865F2)](https://discord.gg/RjA9fCw2hT)
 ![Static Badge](https://img.shields.io/badge/license-MIT-blue)
 ![Static Badge](https://img.shields.io/badge/latest-2025.1.0.0.48pa-blue)
 
