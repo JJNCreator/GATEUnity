@@ -16,15 +16,14 @@ public class UpdateVersionInfo
         var minor = versionSplit[2];
         var patch = versionSplit[3];
         var build = versionSplit[4].Split('p')[0];
-        var stage = "pa";
 
         year = System.DateTime.Now.Year.ToString();
         int incrementBuild = int.Parse(build);
         incrementBuild++;
         build = incrementBuild.ToString();
 
-        var newVersion = string.Format("{0}.{1}.{2}.{3}.{4}{5}", 
-            year, major, minor, patch, build, stage);
+        var newVersion = string.Format("{0}.{1}.{2}.{3}.{4}", 
+            year, major, minor, patch, build);
 
         var writeVersion = new StreamWriter("Assets/Resources/VersionInfo.txt", false);
         writeVersion.WriteLine(string.Format("{0}", newVersion));
