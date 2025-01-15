@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TaskHolder : MonoBehaviour
 {
-    public delegate void OnTaskCompleted(TaskDataSO so);
-    public static event OnTaskCompleted onTaskCompleted;
     public TaskDataSO taskData;
     private int _currentTaskProgress;
     public int CurrentTaskProgress
@@ -35,7 +33,7 @@ public class TaskHolder : MonoBehaviour
     {
         if(taskData.IsCompleted(value))
         {
-            onTaskCompleted?.Invoke(taskData);
+            EventDelegates.ExecuteTaskCompletedEvent(taskData);
         }
     }
 }

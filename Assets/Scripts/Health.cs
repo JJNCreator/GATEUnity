@@ -59,11 +59,7 @@ public class Health : MonoBehaviour
     {
         if(isPlayer)
         {
-            GameManager.Instance.SpawnPlayerRagdoll();
-            GameManager.Instance.playerCamera.GetComponent<PlayerCamera>().mouseSensitivityX = 0f;
-            GameManager.Instance.playerCamera.GetComponent<PlayerCamera>().mouseSensitivityY = 0f;
-            GameUIManager.Instance.ToggleCursor(true);
-            GameUIManager.Instance.ToggleGameOverPanel();
+            EventDelegates.ExecuteGameOverEvent();
             Destroy(GameManager.Instance.player.gameObject);
         }
         else

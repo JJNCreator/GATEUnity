@@ -34,6 +34,15 @@ public class GameManager : MonoBehaviour
         SpawnEnemies();
     }
 
+    private void OnEnable()
+    {
+        EventDelegates.onGameOver += SpawnPlayerRagdoll;
+    }
+    private void OnDisable()
+    {
+        EventDelegates.onGameOver -= SpawnPlayerRagdoll;
+    }
+
     // Update is called once per frame
     void Update()
     {

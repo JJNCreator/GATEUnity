@@ -26,10 +26,14 @@ public class GameUIManager : MonoBehaviour
     void OnEnable()
     {
         //PauseMenuManager.onGamePaused += OnGamePaused;
+        EventDelegates.onGameOver += EnableCursorOnGameOver;
+        EventDelegates.onGameOver += ToggleGameOverPanel;
     }
     void OnDisable()
     {
         //PauseMenuManager.onGamePaused -= OnGamePaused;
+        EventDelegates.onGameOver -= EnableCursorOnGameOver;
+        EventDelegates.onGameOver -= ToggleGameOverPanel;
     }
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,10 @@ public class GameUIManager : MonoBehaviour
         HUDObject.SetActive(!paused);
         pauseMenuObject.SetActive(paused);
         ToggleCursor(paused);
+    }
+    private void EnableCursorOnGameOver()
+    {
+        ToggleCursor(true);
     }
     public void ToggleGameOverPanel()
     {

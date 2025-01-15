@@ -13,12 +13,12 @@ public class TaskUIItem : MonoBehaviour
 
     private void OnEnable()
     {
-        TaskHolder.onTaskCompleted += OnTaskCompleted;
+        EventDelegates.onTaskCompleted += OnTaskCompleted;
     }
 
     private void OnDisable()
     {
-        TaskHolder.onTaskCompleted -= OnTaskCompleted;
+        EventDelegates.onTaskCompleted -= OnTaskCompleted;
     }
 
     public void AssignValues(TaskDataSO so)
