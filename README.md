@@ -21,7 +21,7 @@ A built version of the project can be found under [Releases](https://github.com/
 
 ## Getting the project
 
-This version of the project is for **Unity** Developers. If you're an Unreal, Godot, or Roblox user, please go to [GATEUnreal](https://github.com/JJNCreator/GATEUnreal), [GATEGodot](https://github.com/JJNCreator/GATEGodot), or [GATERoblox](https://github.com/JJNCreator/GATERoblox).
+This version of the project is for **Unity** Developers. If you're an Unreal, Godot, or Roblox user, please go to GATEUnreal (coming soon), GATEGodot (coming soon), or GATERoblox (coming soon).
 
 This project currently uses **Unity 2023.1.20f1**.
 
