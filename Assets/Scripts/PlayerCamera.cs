@@ -25,10 +25,12 @@ public class PlayerCamera : MonoBehaviour
     private void OnEnable()
     {
         PauseMenuManager.onGamePaused += OnPausedGame;
+        EventDelegates.onGameOver += FreezeMovement;
     }
     private void OnDisable()
     {
         PauseMenuManager.onGamePaused -= OnPausedGame;
+        EventDelegates.onGameOver -= FreezeMovement;
     }
 
     private void Awake()
@@ -68,5 +70,10 @@ public class PlayerCamera : MonoBehaviour
         xInverted = GameSettings.XInverted;
         yInverted = GameSettings.YInverted;
         _motionBlurVolume.weight = (GameSettings.MotionBlur) ? 1f : 0f;
+    }
+    private void FreezeMovement()
+    {
+        mouseSensitivityX = 0f;
+        mouseSensitivityY = 0f;
     }
 }
