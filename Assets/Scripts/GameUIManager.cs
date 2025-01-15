@@ -21,6 +21,7 @@ public class GameUIManager : MonoBehaviour
     public GameObject pauseMenuObject;
     public GameObject taskListObject;
     public GameObject taskItemPrefab;
+    public GameObject gameOverPanel;
     
     void OnEnable()
     {
@@ -48,9 +49,24 @@ public class GameUIManager : MonoBehaviour
         pauseMenuObject.SetActive(paused);
         ToggleCursor(paused);
     }
+    public void ToggleGameOverPanel()
+    {
+        gameOverPanel.SetActive(true);
+    }
     private async UniTask LoadMainMenu()
     {
         var asyncOperation = SceneManager.LoadSceneAsync("MainMenu");
+        PauseMenuManager.Instance.Paused = false;
+        ToggleCursor(true);
+        while (!asyncOperation.isDone)
+        {
+            await UniTask.Yield();
+        }
+    }
+    private async UniTask ReloadLevel()
+    {
+        var asyncOperation = SceneManager.LoadSceneAsync(
+            SceneManager.GetActiveScene().buildIndex);
         PauseMenuManager.Instance.Paused = false;
         ToggleCursor(true);
         while (!asyncOperation.isDone)
@@ -86,6 +102,10 @@ public class GameUIManager : MonoBehaviour
     {
         AudioListener.pause = !AudioListener.pause;
         LoadMainMenu().Forget();
+    }
+    public void OnClickRetry()
+    {
+        ReloadLevel().Forget();
     }
     #endregion
 }
