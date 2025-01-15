@@ -1,4 +1,5 @@
 using Cinemachine;
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,5 +69,21 @@ public class GameManager : MonoBehaviour
     public WaypointGroup GetWaypointGroup(int groupID)
     {
         return waypointGroups.First(group => group.groupID == groupID);
+    }
+    public void SpawnPlayerRagdoll()
+    {
+        var ragdoll = Instantiate(Resources.Load<GameObject>("PlayerRagdoll"),
+            player.transform.position,
+            player.transform.rotation);
+    }
+    public async UniTaskVoid SpawnEnemyRagdoll(Transform enemyPosition, int timeBeforeDestruction)
+    {
+        var ragdoll = Instantiate(Resources.Load<GameObject>("EnemyRagdoll"),
+            enemyPosition.position,
+            enemyPosition.rotation);
+
+        await UniTask.Delay(timeBeforeDestruction);
+
+        Destroy(ragdoll);
     }
 }

@@ -54,7 +54,10 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            _navMeshAgent.SetDestination(GameManager.Instance.player.transform.position);
+            if(GameManager.Instance.player != null)
+            {
+                _navMeshAgent.SetDestination(GameManager.Instance.player.transform.position);
+            }
         }
         animator.SetFloat("Forward", Mathf.Clamp01(_navMeshAgent.velocity.magnitude));
     }

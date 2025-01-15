@@ -59,12 +59,17 @@ public class Health : MonoBehaviour
     {
         if(isPlayer)
         {
-            //TODO: Replace with better result
-            GameUIManager.Instance.OnClickQuit();
+            GameManager.Instance.SpawnPlayerRagdoll();
+            GameManager.Instance.playerCamera.GetComponent<PlayerCamera>().mouseSensitivityX = 0f;
+            GameManager.Instance.playerCamera.GetComponent<PlayerCamera>().mouseSensitivityY = 0f;
+            GameUIManager.Instance.ToggleCursor(true);
+            GameUIManager.Instance.ToggleGameOverPanel();
+            Destroy(GameManager.Instance.player.gameObject);
         }
         else
         {
             GetComponent<TaskHolder>().CurrentTaskProgress = 100;
+            GameManager.Instance.SpawnEnemyRagdoll(transform, 4000).Forget();
             Destroy(gameObject);
         }
     }
