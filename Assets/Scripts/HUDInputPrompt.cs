@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 using System;
 using Unity.VisualScripting;
 using System.Diagnostics;
-using UnityEngine.InputSystem.Switch;
 
 public class HUDInputPrompt : MonoBehaviour
 {
