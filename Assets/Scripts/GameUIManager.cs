@@ -19,6 +19,8 @@ public class GameUIManager : MonoBehaviour
     }
     public GameObject HUDObject;
     public GameObject pauseMenuObject;
+    public GameObject taskListObject;
+    public GameObject taskItemPrefab;
     
     void OnEnable()
     {
@@ -32,6 +34,7 @@ public class GameUIManager : MonoBehaviour
     void Start()
     {
         ToggleCursor(false);
+        PopulateTaskList();
     }
 
     // Update is called once per frame
@@ -59,6 +62,16 @@ public class GameUIManager : MonoBehaviour
     public void ToggleCursor(bool on)
     {
         Cursor.visible = on;
+    }
+    public void PopulateTaskList()
+    {
+        for(int i = 0; i < GameManager.Instance.taskItems.Length; i++)
+        {
+            var taskItem = GameManager.Instance.taskItems[i];
+            var spawnTaskUIItem = Instantiate(taskItemPrefab);
+            spawnTaskUIItem.transform.SetParent(taskListObject.transform, false);
+            spawnTaskUIItem.GetComponent<TaskUIItem>().AssignValues(taskItem);
+        }
     }
     #region editor-bound
     public void OnClickPauseState()

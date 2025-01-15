@@ -64,6 +64,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            GetComponent<TaskHolder>().CurrentTaskProgress = 100;
             Destroy(gameObject);
         }
     }

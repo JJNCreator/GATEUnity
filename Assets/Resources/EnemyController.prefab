@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 8014106998225046466}
   - component: {fileID: 1177329943320010543}
   - component: {fileID: 1114973136705979318}
+  - component: {fileID: -8744912475924320999}
   m_Layer: 6
   m_Name: EnemyController
   m_TagString: Enemy
@@ -288,6 +289,19 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   followPlayerCamera: 1
+--- !u!114 &-8744912475924320999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579131028825316902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d74341e90c2e67469b3699d9f413ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskData: {fileID: 0}
 --- !u!1 &5052786333216997722
 GameObject:
   m_ObjectHideFlags: 0
