@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform _playerSpawnPoint;
     [SerializeField] private Transform[] _enemySpawnPoints;
+    public TaskDataSO[] taskItems;
     public WaypointGroup[] waypointGroups;
     public PlayerController player;
     public GameObject playerCamera;
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
                 spawnPoint.rotation);
             spawnEnemy.GetComponent<EnemyController>().target = player.transform;
             spawnEnemy.GetComponent<EnemyController>().waypoints = GetWaypointGroup(i).waypointChildren;
+            spawnEnemy.GetComponent<TaskHolder>().taskData = taskItems[i];
         }
     }
     public WaypointGroup GetWaypointGroup(int groupID)
