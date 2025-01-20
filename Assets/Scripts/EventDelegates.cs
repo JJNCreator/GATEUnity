@@ -10,6 +10,12 @@ public class EventDelegates
     public delegate void OnTaskCompleted(TaskDataSO so);
     public static event OnTaskCompleted onTaskCompleted;
 
+    public delegate void OnSettingsLoaded();
+    public static event OnSettingsLoaded onSettingsLoaded;
+
+    public delegate void OnGamePaused(bool b);
+    public static event OnGamePaused onGamePaused;
+
     public static void ExecuteGameOverEvent()
     {
         onGameOver?.Invoke();
@@ -18,4 +24,13 @@ public class EventDelegates
     {
         onTaskCompleted?.Invoke(so);
     }
+    public static void ExecuteSettingsLoadedEvent()
+    {
+        onSettingsLoaded?.Invoke();
+    }
+    public static void ExecuteGamePausedEvent(bool b)
+    {
+        onGamePaused?.Invoke(b);
+    }
+
 }

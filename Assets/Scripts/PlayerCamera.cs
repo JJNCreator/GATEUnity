@@ -24,12 +24,12 @@ public class PlayerCamera : MonoBehaviour
 
     private void OnEnable()
     {
-        PauseMenuManager.onGamePaused += OnPausedGame;
+        EventDelegates.onGamePaused += OnPausedGame;
         EventDelegates.onGameOver += FreezeMovement;
     }
     private void OnDisable()
     {
-        PauseMenuManager.onGamePaused -= OnPausedGame;
+        EventDelegates.onGamePaused -= OnPausedGame;
         EventDelegates.onGameOver -= FreezeMovement;
     }
 

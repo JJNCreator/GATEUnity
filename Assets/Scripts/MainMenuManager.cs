@@ -11,6 +11,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -39,6 +40,10 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Image _devGalleryImage;
 
     private int _devGalleryImageIndex = 0;
+    private PlayerInput _playerInput;
+    private InputAction _backButtonAction;
+    private bool MenuBackInput { get; set; }
+    private int menuIndex = 0;
 
     [SerializeField] private TMP_Dropdown _resolutionDropdown;
     [SerializeField] private TMP_Dropdown _qualityLevelDropdown;
@@ -55,6 +60,13 @@ public class MainMenuManager : MonoBehaviour
         }
     }
     [SerializeField] private TextMeshProUGUI _versionText;
+
+    private void Awake()
+    {
+        _playerInput = GetComponent<PlayerInput>();
+        _backButtonAction = _playerInput.actions["Back"];
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +80,7 @@ public class MainMenuManager : MonoBehaviour
         {
             ApplySettings();
             SaveFileManager.appliedSettingsForSession = true;
+            EventDelegates.ExecuteSettingsLoadedEvent();
         }
 
         _masterGroup.audioMixer.SetFloat("MasterVolume", GameSettings.MasterVolume);
@@ -78,7 +91,12 @@ public class MainMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        MenuBackInput = _backButtonAction.WasPressedThisFrame();
+
+        if(MenuBackInput)
+        {
+            BackButton();
+        }
     }
 
     private void LoadVersion()
@@ -93,18 +111,44 @@ public class MainMenuManager : MonoBehaviour
         {
             case MenuState.Main:
                 ToggleMenus(true, false, false, false, false);
+                SetEventSystemCurrentObject(_mainButtonsObject.transform.Find("Play").gameObject);
+                menuIndex = 0;
                 break;
             case MenuState.Extras:
                 ToggleMenus(false, true, false, false, false);
+                SetEventSystemCurrentObject(_extrasObject.transform.Find("DevGallery/Forward/").gameObject);
+                menuIndex = 1;
                 break;
             case MenuState.SettingsGraphics:
                 ToggleMenus(false, false, true, false, false);
+                SetEventSystemCurrentObject(_settingsObject.transform.Find("Tabs/GraphicsButton/").gameObject);
+                menuIndex = 2;
                 break;
             case MenuState.SettingsAudio:
                 ToggleMenus(false, false, false, true, false);
+                menuIndex = 3;
                 break;
             case MenuState.SettingsControls:
                 ToggleMenus(false, false, false, false, true);
+                menuIndex = 4;
+                break;
+        }
+    }
+
+    private void BackButton()
+    {
+        switch(menuIndex)
+        {
+            case 0:
+                OnQuitGameClicked();
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                SaveKeyBindings();
+                SaveFileManager.Save();
+                CurrentMenuState = MenuState.Main;
                 break;
         }
     }
@@ -331,4 +375,9 @@ public class MainMenuManager : MonoBehaviour
     }
 
     #endregion
+
+    private void SetEventSystemCurrentObject(GameObject go)
+    {
+        EventSystem.current.SetSelectedGameObject(go);
+    }
 }
