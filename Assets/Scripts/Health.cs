@@ -12,6 +12,14 @@ public class Health : MonoBehaviour
     public Slider healthBarSlider;
     public Gradient healthBarGradient;
     public bool followPlayerCamera = true;
+    public AudioClip[] gruntSounds;
+
+    private AudioSource _audioSource;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +37,7 @@ public class Health : MonoBehaviour
                 healthBarSlider.transform.position - mainCamera.transform.position);
         }
     }
-    public void AdjustCurrentHealth(int amount)
+    public void AdjustCurrentHealth(int amount, bool didDamage = true)
     {
         currentHealth += amount;
         if (currentHealth > maxHealth)
@@ -46,6 +54,16 @@ public class Health : MonoBehaviour
             healthBarSlider.value = ((float)currentHealth / (float)maxHealth);
             CheckHealthBarGradient();
         }
+        if(didDamage)
+        {
+            PlayGruntSound();
+        }
+    }
+    private void PlayGruntSound()
+    {
+        var selectedGruntSound = gruntSounds[Random.Range(0, gruntSounds.Length)];
+        _audioSource.clip = selectedGruntSound;
+        _audioSource.Play();
     }
     private void CheckHealthBarGradient()
     {
@@ -53,7 +71,7 @@ public class Health : MonoBehaviour
     }
     public void RegenerateHealth()
     {
-        AdjustCurrentHealth(+1);
+        AdjustCurrentHealth(+1, didDamage: false);
     }
     private void OnDeath(bool isPlayer)
     {
