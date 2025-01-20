@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class MinimapCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform target;
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        
+        var newPosition = target.position;
+        newPosition.y = transform.position.y;
+        transform.position = newPosition;
+
+        transform.rotation = Quaternion.Euler(90f, target.eulerAngles.y, 0f);
     }
 }

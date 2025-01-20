@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
         spawnPlayer.GetComponent<PlayerController>().playerCamera = playerCamera.transform;
         spawnPlayer.GetComponent<Health>().healthBarSlider = playerHealthBar;
         playerCamera.GetComponent<PlayerCamera>().target = cameraTarget;
-        _minimapCamera.transform.SetParent(spawnPlayer.transform, false);
-        _minimapCamera.transform.position = new Vector3(0f, 0f, 0f);
+        //_minimapCamera.transform.SetParent(spawnPlayer.transform, false);
+        //_minimapCamera.transform.position = new Vector3(0f, 0f, 0f);
     }
     private void SpawnEnemies()
     {
