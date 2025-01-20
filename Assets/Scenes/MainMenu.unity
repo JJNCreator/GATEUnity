@@ -568,16 +568,16 @@ MonoBehaviour:
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_PointAction: {fileID: 616079406480854260, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_MoveAction: {fileID: -8946262232373695938, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_SubmitAction: {fileID: -6263389291296195911, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_CancelAction: {fileID: -5277343313881024634, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_LeftClickAction: {fileID: 8788649199492471225, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_MiddleClickAction: {fileID: -1210931249458125919, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_RightClickAction: {fileID: 1181016046333588457, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_ScrollWheelAction: {fileID: -5074029650830420433, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 2915257701713667219, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 6344426508793226631, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_PointAction: {fileID: -2182781693444455670, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_MoveAction: {fileID: -7447714647506261109, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_SubmitAction: {fileID: 5995087107658811136, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_CancelAction: {fileID: -1921301020680231279, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_LeftClickAction: {fileID: -6717455469347548661, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_MiddleClickAction: {fileID: 5813292781428819376, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_RightClickAction: {fileID: -7581157998576572503, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_ScrollWheelAction: {fileID: 4644745188211506796, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 2418271125414494570, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: -2817398301295907220, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -612,6 +612,14 @@ PrefabInstance:
     - target: {fileID: 553422754764578014, guid: d7f3219f2dc4ddb4c88905efab090914, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439286159052544395, guid: d7f3219f2dc4ddb4c88905efab090914, type: 3}
+      propertyPath: m_text
+      value: Press X
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558066341645374321, guid: d7f3219f2dc4ddb4c88905efab090914, type: 3}
+      propertyPath: m_text
+      value: Hold Num 8/Hold Num 4/Hold Num 5/Hold Num 6
       objectReference: {fileID: 0}
     - target: {fileID: 1907137613694789399, guid: d7f3219f2dc4ddb4c88905efab090914, type: 3}
       propertyPath: m_AnchorMax.y
@@ -752,10 +760,6 @@ PrefabInstance:
     - target: {fileID: 4211299337987362493, guid: d7f3219f2dc4ddb4c88905efab090914, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936945225126374086, guid: d7f3219f2dc4ddb4c88905efab090914, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 12.109863
       objectReference: {fileID: 0}
     - target: {fileID: 6707281422867659045, guid: d7f3219f2dc4ddb4c88905efab090914, type: 3}
       propertyPath: m_AnchorMax.y

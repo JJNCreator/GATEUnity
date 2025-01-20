@@ -23,13 +23,25 @@ public class UpdateUIFromSaveFile : MonoBehaviour
         MotionBlur = 11
     }
     public SettingType type;
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
-        if(!SaveFileManager.appliedSettingsForSession)
+        //EventDelegates.onSettingsLoaded += UpdateValue;
+        if (SaveFileManager.appliedSettingsForSession)
         {
             UpdateValue();
         }
+    }
+
+    private void OnDisable()
+    {
+        //EventDelegates.onSettingsLoaded -= UpdateValue;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+     
     }
 
     private void UpdateValue()

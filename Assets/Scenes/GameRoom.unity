@@ -2798,16 +2798,16 @@ MonoBehaviour:
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_PointAction: {fileID: 616079406480854260, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_MoveAction: {fileID: -8946262232373695938, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_SubmitAction: {fileID: -6263389291296195911, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_CancelAction: {fileID: -5277343313881024634, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_LeftClickAction: {fileID: 8788649199492471225, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_MiddleClickAction: {fileID: -1210931249458125919, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_RightClickAction: {fileID: 1181016046333588457, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_ScrollWheelAction: {fileID: -5074029650830420433, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 2915257701713667219, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 6344426508793226631, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_PointAction: {fileID: -2182781693444455670, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_MoveAction: {fileID: -7447714647506261109, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_SubmitAction: {fileID: 5995087107658811136, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_CancelAction: {fileID: -1921301020680231279, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_LeftClickAction: {fileID: -6717455469347548661, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_MiddleClickAction: {fileID: 5813292781428819376, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_RightClickAction: {fileID: -7581157998576572503, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_ScrollWheelAction: {fileID: 4644745188211506796, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 2418271125414494570, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: -2817398301295907220, guid: 2c016cc2bfe9ca44e814b214f3d4fc46, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -7008,6 +7008,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: d0b9b50b-0ad0-4851-9d5c-8399518b5b39
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a52b87d1-a7fc-415e-a457-b037fd4140f5
+    m_ActionName: 'UI/Back[/XInputControllerWindows/buttonEast,/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

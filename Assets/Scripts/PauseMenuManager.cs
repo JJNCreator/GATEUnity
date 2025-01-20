@@ -8,6 +8,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using System.Runtime.CompilerServices;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -19,9 +20,6 @@ public class PauseMenuManager : MonoBehaviour
         SettingsControls = 3,
         None = 4
     }
-
-    public delegate void OnGamePaused(bool b);
-    public static event OnGamePaused onGamePaused;
 
     [SerializeField] private AudioMixerGroup _masterGroup;
     [SerializeField] private AudioMixerGroup _musicGroup;
@@ -39,6 +37,12 @@ public class PauseMenuManager : MonoBehaviour
     [SerializeField] private TMP_Dropdown _resolutionDropdown;
     [SerializeField] private TMP_Dropdown _qualityLevelDropdown;
     [SerializeField] private InputActionAsset _inputActions;
+
+    private PlayerInput _playerInput;
+    private InputAction _backButtonAction;
+    private bool MenuBackInput { get; set; }
+    private int menuIndex = 0;
+
     public PauseMenuState CurrentMenuState
     {
         get
@@ -76,6 +80,12 @@ public class PauseMenuManager : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        _playerInput = FindFirstObjectByType<PlayerInput>();
+        _backButtonAction = _playerInput.actions["Back"];
+    }
+
     private void Start()
     {
         SetResolutionOptions();
@@ -99,17 +109,23 @@ public class PauseMenuManager : MonoBehaviour
                 Paused = false;
             }
         }
+        MenuBackInput = _backButtonAction.WasPressedThisFrame();
+        if(MenuBackInput)
+        {
+            BackButton();
+        }
     }
 
     private void OnPauseChanged(bool paused)
     {
-        onGamePaused?.Invoke(paused);
+        EventDelegates.ExecuteGamePausedEvent(paused);
         if(paused)
         {
             Time.timeScale = 0f;
             AudioListener.pause = true;
             CurrentMenuState = PauseMenuState.Main;
-            EventSystem.current.firstSelectedGameObject = _mainButtonsObject.transform.GetChild(0).gameObject;
+            SetEventSystemCurrentObject(_mainButtonsObject.transform.GetChild(0).gameObject);
+            //EventSystem.current.firstSelectedGameObject = _mainButtonsObject.transform.GetChild(0).gameObject;
             _background.SetActive(true);
         }
         else
@@ -127,18 +143,37 @@ public class PauseMenuManager : MonoBehaviour
         {
             case PauseMenuState.Main:
                 ToggleMenus(true, false, false, false);
+                SetEventSystemCurrentObject(_mainButtonsObject.transform.GetChild(0).gameObject);
+                menuIndex = 0;
                 break;
             case PauseMenuState.SettingsGraphics:
                 ToggleMenus(false, true, false, false);
+                SetEventSystemCurrentObject(_settingsObject.transform.Find("Tabs/GraphicsButton/").gameObject);
+                menuIndex = 1;
                 break;
             case PauseMenuState.SettingsAudio:
                 ToggleMenus(false, false, true, false);
+                menuIndex = 2;
                 break;
             case PauseMenuState.SettingsControls:
                 ToggleMenus(false, false, false, true);
+                menuIndex = 3;
                 break;
             case PauseMenuState.None:
                 ToggleMenus(false, false, false, false);
+                break;
+        }
+    }
+    private void BackButton()
+    {
+        switch (menuIndex)
+        {
+            case 1:
+            case 2:
+            case 3:
+                SaveKeyBindings();
+                SaveFileManager.Save();
+                CurrentMenuState = PauseMenuState.Main;
                 break;
         }
     }
@@ -300,4 +335,8 @@ public class PauseMenuManager : MonoBehaviour
         LoadMainMenu().Forget();
     }
     #endregion
+    private void SetEventSystemCurrentObject(GameObject go)
+    {
+        EventSystem.current.SetSelectedGameObject(go);
+    }
 }
