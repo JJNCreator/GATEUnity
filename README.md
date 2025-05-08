@@ -6,7 +6,7 @@
 
 [![Discord - https://discord.gg/RjA9fCw2hT](https://img.shields.io/discord/1300158572784521267?color=%235865F2)](https://discord.gg/RjA9fCw2hT)
 [![Static Badge](https://img.shields.io/badge/license-MIT-blue)](https://github.com/JJNCreator/GATEUnity/blob/main/LICENSE)
-[![Static Badge](https://img.shields.io/badge/latest-2025.1.0.1.73-blue)](https://github.com/JJNCreator/GATEUnity/releases)
+[![Static Badge](https://img.shields.io/badge/latest-2025.1.0.1.74-blue)](https://github.com/JJNCreator/GATEUnity/releases)
 
 ## Tech demo and project template
 
