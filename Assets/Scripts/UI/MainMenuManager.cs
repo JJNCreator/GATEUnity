@@ -269,8 +269,15 @@ public class MainMenuManager : MonoBehaviour
     }
     public void SetResolutionChoice(int i)
     {
-        GameSettings.ResolutionChoice = i;
-        var selectedOption = _resolutionDropdown.options[i].text;
+        if (_resolutionDropdown.options.Count != i)
+        {
+            GameSettings.ResolutionChoice = _resolutionDropdown.options.Count - 1;
+        }
+        else
+        {
+            GameSettings.ResolutionChoice = i;
+        }
+        var selectedOption = _resolutionDropdown.options[GameSettings.ResolutionChoice].text;
         var selectedOptionSplit = selectedOption.Split(new string[]
         {
             " x ",

@@ -58,8 +58,14 @@ public class Health : MonoBehaviour
     private void PlayGruntSound()
     {
         var selectedGruntSound = gruntSounds[Random.Range(0, gruntSounds.Length)];
-        _audioSource.clip = selectedGruntSound;
-        _audioSource.Play();
+        if(_audioSource != null)
+        {
+            if(_audioSource.enabled)
+            {
+                _audioSource.clip = selectedGruntSound;
+                _audioSource.Play();
+            }
+        }
     }
     private void CheckHealthBarGradient()
     {
