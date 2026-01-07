@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
             var moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * moveSpeed;
 
-            _rb.velocity = new Vector3(moveDirection.x, _rb.velocity.y, moveDirection.z) * direction.magnitude;
+            _rb.linearVelocity = new Vector3(moveDirection.x, _rb.linearVelocity.y, moveDirection.z) * direction.magnitude;
             animator.SetFloat("Forward", Mathf.Clamp01(direction.z));
         }
         if (UserInput.Instance.JumpPressed && _characterOnGround)
